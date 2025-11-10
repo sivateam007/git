@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Tutorial - Jassif Team Institution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h1>Jassif Team <span>Institution</span></h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Navigation Tabs -->
+    <div class="nav-tabs">
+        <a href="java-getting-started.html" class="nav-tab prev">
+            <i class="fas fa-arrow-left"></i>
+            <span>முந்தைய</span>
+        </a>
+        <a href="next-topic.html" class="nav-tab next">
+            <span>அடுத்தது</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Git Tutorial</h2>
+            <p>Learn Git - Master version control for your projects</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- What is Git Section -->
+        <section class="content-section" id="what-is-git">
+            <h2>Learn Git</h2>
+            <p>Git என்பது உங்களுக்கு உதவும் ஒரு கருவியாகும்:</p>
+            
+            <ul>
+                <li>உங்கள் கோப்புகள் மற்றும் குறியீட்டின் வெவ்வேறு பதிப்புகளை சேமித்து நிர்வகிக்க</li>
+                <li>மற்றவர்களுடன் வேலை செய்ய, மாற்றங்களை கண்காணிக்க, மற்றும் தவறுகளை ரத்து செய்ய</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4><span class="tip-icon">🏁</span> உதவிக்குறிப்பு:</h4>
+                <p>உங்கள் முன்னேற்றத்தை கண்காணிக்க உள்நுழையவும் - இது இலவசம்.</p>
+            </div>
+        </section>
+        
+        <!-- Where to use Git Section -->
+        <section class="content-section" id="where-git">
+            <h2>Where to use Git?</h2>
+            <p>Git உங்கள் கணினியில் வேலை செய்கிறது, ஆனால் GitHub, GitLab, அல்லது Bitbucket போன்ற ஆன்லைன் சேவைகளுடன் உங்கள் வேலையை மற்றவர்களுடன் பகிர்ந்து கொள்ளவும் பயன்படுத்தலாம். இவை ரிமோட் ரிப்போசிடரிகள் என்று அழைக்கப்படுகின்றன.</p>
+            
+            <p>இந்த டுடோரியலில், உங்கள் சொந்த திட்டங்களுக்கு Git ஐ எவ்வாறு பயன்படுத்துவது மற்றும் ஆன்லைனில் ரிமோட் ரிப்போசிடரிகளுடன் எவ்வாறு இணைப்பது என்பதை நீங்கள் கற்றுக்கொள்வீர்கள்.</p>
+        </section>
+        
+        <!-- Learning by Examples Section -->
+        <section class="content-section" id="learning-examples">
+            <h2>Learning by Examples</h2>
+            <p>இந்த டுடோரியலில், Git கட்டளைகளை இப்படி காண்பிப்போம்:</p>
+            
+            <div class="code-example">
+                <h3>Example</h3>
+                <pre><code><span class="command-input">git --version</span>
+<span class="command-output">git version 2.30.2.windows.1</span></code></pre>
+            </div>
+            
+            <p>புதிய பயனர்களுக்கு, டெர்மினல் காட்சியைப் பயன்படுத்துவது சற்று சிக்கலானதாகத் தோன்றலாம்.</p>
+            
+            <p>கவலைப்பட வேண்டாம்! நாங்கள் இதை மிகவும் எளிமையாக வைத்திருப்போம், மேலும் இந்த வழியில் கற்றுக்கொள்வது Git எவ்வாறு செயல்படுகிறது என்பதற்கான நல்ல புரிதலை உங்களுக்கு வழங்கும்.</p>
+            
+            <p>மேலே உள்ள குறியீட்டில், நீங்கள் கட்டளைகள் (உள்ளீடு) மற்றும் வெளியீட்டைக் காணலாம்.</p>
+            
+            <p>இது போன்ற வரிகள் நாம் உள்ளிடும் கட்டளைகள்:</p>
+            
+            <div class="code-example">
+                <h3>Example</h3>
+                <pre><code><span class="command-input">git --version</span></code></pre>
+            </div>
+            
+            <p>இது போன்ற வரிகள் எங்கள் கட்டளைகளுக்கான வெளியீடு/பதில்:</p>
+            
+            <div class="code-example">
+                <h3>Example</h3>
+                <pre><code><span class="command-output">git version 2.30.2.windows.1</span></code></pre>
+            </div>
+            
+            <p>பொதுவாக, $ முன்னால் உள்ள வரிகள் உள்ளீடு.</p>
+            
+            <p>இவை உங்கள் டெர்மினலில் நகலெடுத்து இயக்கக்கூடிய கட்டளைகள்.</p>
+            
+            <div class="tip-box">
+                <h4><span class="tip-icon">💡</span> ஆரம்பிக்கும் வழிகாட்டுதலுக்கான உதவிக்குறிப்பு:</h4>
+                <p>தவறுகள் செய்வதைப் பற்றி கவலைப்பட வேண்டாம்!</p>
+                <p>உங்கள் சொந்த கணினியில் Git ஐப் பயன்படுத்தும் போது, முக்கியமான எதையும் நீங்கள் உடைக்க முடியாது.</p>
+                <p>சோதனை செய்வது கற்றுக்கொள்வதற்கான ஒரு சிறந்த வழியாகும், மேலும் நீங்கள் செல்லும் போது மாற்றங்களை எப்போதும் ரத்து செய்யலாம் அல்லது மீண்டும் செய்யலாம்.</p>
+            </div>
+        </section>
+        
+        <!-- Platform Selector Section -->
+        <section class="content-section" id="platform-selector">
+            <h2>Change Platform:</h2>
+            
+            <div class="platform-selector">
+                <p>டுடோரியல் GitHub, GitLab, அல்லது Bitbucket ஆகியவற்றுக்கான எடுத்துக்காட்டுகளைக் காட்டலாம்.</p>
+                
+                <p>Git கட்டளைகள் பெரும்பாலும் ஒரே மாதிரியானவை, ஆனால் சில படிகள் (ரிமோட்டுடன் இணைப்பது அல்லது குறியீட்டை தள்ளுவது போன்றவை) நீங்கள் தேர்ந்தெடுக்கும் தளத்தைப் பொறுத்து சற்று வித்தியாசமாகத் தோன்றலாம்.</p>
+                
+                <div class="platform-buttons">
+                    <button class="platform-btn active">GitHub</button>
+                    <button class="platform-btn">Bitbucket</button>
+                    <button class="platform-btn">GitLab</button>
+                </div>
+                
+                <p style="margin-top: 1rem;">ஒவ்வொரு தளத்திற்கும் எடுத்துக்காட்டுகளைப் பார்க்க மெனுவைப் பயன்படுத்தவும்.</p>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="java-getting-started.html" class="nav-tab prev">
+                <i class="fas fa-arrow-left"></i>
+                <span>முந்தைய</span>
+            </a>
+            <a href="next-topic.html" class="nav-tab next">
+                <span>அடுத்தது</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Jassif Team Institution</h3>
+                <p>Leading educational institution providing quality programming education in Tamil.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#what-is-git">Learn Git</a></li>
+                    <li><a href="#where-git">Where to use Git</a></li>
+                    <li><a href="#learning-examples">Learning by Examples</a></li>
+                    <li><a href="#platform-selector">Platform Selector</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Location & Hours</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Jassif Team Institution. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Platform selector functionality
+        document.querySelectorAll('.platform-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.platform-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all content sections for animation
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
