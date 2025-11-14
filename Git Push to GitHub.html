@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub-க்கு Push செய்தல் - Jassif Team Institution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h1>Jassif Team <span>Institution</span></h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Navigation Tabs -->
+    <div class="nav-tabs">
+        <a href="Git Pull from GitHub.html" class="nav-tab prev">
+            <i class="fas fa-arrow-left"></i>
+            <span>முந்தைய</span>
+        </a>
+        <a href="Git GitHub Branch.html" class="nav-tab next">
+            <span>அடுத்தது</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>GitHub-க்கு Push செய்தல்</h2>
+            <p>உங்கள் உள்ளூர் மாற்றங்களை GitHub தொலை களஞ்சியத்திற்கு அனுப்புவது எப்படி</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Introduction Section -->
+        <section class="content-section" id="introduction">
+            <h2>GitHub-க்கு Push செய்தல்</h2>
+            
+            <p>நாங்கள் உள்ளூரில் மாற்றங்களைச் செய்தபோது, மாற்றங்களுடன் எங்கள் தொலை களஞ்சியத்தைப் புதுப்பிக்க விரும்புகிறோம்.</p>
+            
+            <p>எங்கள் உள்ளூர் மாற்றங்களை எங்கள் தொலைக்கு மாற்றுவது ஒரு push கட்டளை மூலம் செய்யப்படுகிறது.</p>
+            
+            <p>GitHub-க்கு மாற்றங்களை push செய்ய நாம் பயன்படுத்தக்கூடிய பல கட்டளைகள் உள்ளன.</p>
+        </section>
+
+        <!-- Key Push Commands -->
+        <section class="content-section" id="key-commands">
+            <h2>முக்கிய Push கட்டளைகள்</h2>
+            
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <h3>அடிப்படை Push</h3>
+                    <p>உங்கள் கமிட்டுகளை GitHub-க்கு அனுப்பவும்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Force Push</h3>
+                    <p>கட்டாயமாக மாற்றங்களை அனுப்பவும்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3>Tags Push</h3>
+                    <p>டேக்களை GitHub-க்கு அனுப்பவும்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>சிக்கல் தீர்த்தல்</h3>
+                    <p>பொதுவான பிரச்சினைகள் மற்றும் தீர்வுகள்</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Basic Push -->
+        <section class="content-section" id="basic-push">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <h2>அடிப்படை Push</h2>
+            </div>
+            
+            <p>இந்த கட்டளை உங்கள் தற்போதைய கிளையை origin என்ற தொலை களஞ்சியத்திற்கு push செய்கிறது:</p>
+            
+            <div class="code-block">
+                <div class="code-header">
+                    <span>கட்டளை: அடிப்படை Push</span>
+                    <button class="copy-btn" onclick="copyCode(this)">நகலெடு</button>
+                </div>
+                <pre><code>git push origin</code></pre>
+            </div>
+            
+            <p>இது உங்கள் உள்ளூர் கமிட்டுகளை GitHub-க்கு பதிவேற்றும்.</p>
+            
+            <div class="note-box">
+                <h4>குறிப்பு:</h4>
+                <p>நீங்கள் ஏற்கனவே உங்கள் மாற்றங்களை <code>git commit</code> மூலம் கமிட் செய்திருக்க வேண்டும்.</p>
+            </div>
+        </section>
+
+        <!-- Force Push -->
+        <section class="content-section" id="force-push">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <h2>Force Push</h2>
+            </div>
+            
+            <p>உங்கள் push non-fast-forward புதுப்பிப்புகள் காரணமாக நிராகரிக்கப்பட்டால் (எடுத்துக்காட்டாக, ஒரு rebase-க்குப் பிறகு), நீங்கள் push-ஐ கட்டாயப்படுத்தலாம்.</p>
+            
+            <div class="warning-box">
+                <h4><span class="warning-icon">⚠️</span> எச்சரிக்கை:</h4>
+                <p>இது தொலை களஞ்சியத்தில் உள்ள மாற்றங்களை மேலெழுதலாம். கவனத்துடன் பயன்படுத்தவும்!</p>
+            </div>
+            
+            <div class="code-block">
+                <div class="code-header">
+                    <span>கட்டளை: Force Push</span>
+                    <button class="copy-btn" onclick="copyCode(this)">நகலெடு</button>
+                </div>
+                <pre><code>git push --force origin feature-branch</code></pre>
+            </div>
+            
+            <p>பாதுகாப்பான force push-க்கு <code>--force-with-lease</code> பயன்படுத்தவும்:</p>
+            
+            <div class="code-block">
+                <div class="code-header">
+                    <span>கட்டளை: பாதுகாப்பான Force Push</span>
+                    <button class="copy-btn" onclick="copyCode(this)">நகலெடு</button>
+                </div>
+                <pre><code>git push --force-with-lease origin feature-branch</code></pre>
+            </div>
+        </section>
+
+        <!-- Push Tags -->
+        <section class="content-section" id="push-tags">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <h2>Tags Push</h2>
+            </div>
+            
+            <p>அனைத்து உள்ளூர் டேக்களையும் GitHub-க்கு push செய்ய:</p>
+            
+            <div class="code-block">
+                <div class="code-header">
+                    <span>கட்டளை: அனைத்து டேக்களையும் Push செய்யவும்</span>
+                    <button class="copy-btn" onclick="copyCode(this)">நகலெடு</button>
+                </div>
+                <pre><code>git push --tags</code></pre>
+            </div>
+            
+            <p>ஒரு குறிப்பிட்ட டேக்கை push செய்ய:</p>
+            
+            <div class="code-block">
+                <div class="code-header">
+                    <span>கட்டளை: குறிப்பிட்ட டேக்கை Push செய்யவும்</span>
+                    <button class="copy-btn" onclick="copyCode(this)">நகலெடு</button>
+                </div>
+                <pre><code>git push origin v1.0</code></pre>
+            </div>
+        </section>
+
+        <!-- Troubleshooting -->
+        <section class="content-section" id="troubleshooting">
+            <div class="step-header">
+                <div class="step-number">4</div>
+                <h2>சிக்கல் தீர்த்தல்</h2>
+            </div>
+            
+            <div class="troubleshooting-grid">
+                <div class="issue-card">
+                    <div class="issue-icon error">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <h4>Non-fast-forward பிழை</h4>
+                    <p><strong>காரணம்:</strong> வேறொருவர் கிளைக்கு push செய்துள்ளனர்</p>
+                    <p><strong>தீர்வு:</strong> மீண்டும் push செய்வதற்கு முன் <code>git pull --rebase</code> இயக்கவும்</p>
+                </div>
+                
+                <div class="issue-card">
+                    <div class="issue-icon warning">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h4>அங்கீகாரம் தோல்வி</h4>
+                    <p><strong>காரணம்:</strong> களஞ்சியத்திற்கான அணுகல் இல்லை அல்லது சான்றுகள் தவறானவை</p>
+                    <p><strong>தீர்வு:</strong> களஞ்சியத்திற்கு அணுகல் உள்ளதா என்பதையும் உங்கள் சான்றுகள் சரியானவையா என்பதையும் உறுதிப்படுத்தவும்</p>
+                </div>
+                
+                <div class="issue-card">
+                    <div class="issue-icon info">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h4>இணைப்பு பிரச்சினைகள்</h4>
+                    <p><strong>காரணம்:</strong> நெட்வொர்க் அல்லது பயர்வால் சிக்கல்கள்</p>
+                    <p><strong>தீர்வு:</strong> நெட்வொர்க் இணைப்பு மற்றும் SSH விசை அமைப்புகளைச் சரிபார்க்கவும்</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Verification -->
+        <section class="content-section" id="verification">
+            <h2>Push வெற்றியைச் சரிபார்க்கவும்</h2>
+            
+            <p>GitHub-க்குச் சென்று, களஞ்சியத்தில் ஒரு புதிய கமிட் உள்ளதா என உறுதிப்படுத்தவும்:</p>
+            
+            <div class="screenshot-container">
+                <img src="github12.png" alt="GitHub New Commit" class="screenshot-image">
+                <p class="screenshot-caption">GitHub-ல் புதிய கமிட்</p>
+            </div>
+            
+            <div class="success-box">
+                <h4><span class="success-icon">🚀</span> அடுத்து என்ன?</h4>
+                <p>இப்போது, நாங்கள் GitHub-ல் கிளைகளில் பணிபுரியத் தொடங்கப் போகிறோம்.</p>
+            </div>
+        </section>
+
+        <!-- Quick Reference Section -->
+        <section class="content-section" id="quick-reference">
+            <h2>விரைவு குறிப்பு</h2>
+            
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <h3>அடிப்படை Push</h3>
+                    <p>உங்கள் கமிட்டுகளை அனுப்பவும்</p>
+                    <div class="code-block small">
+                        <pre><code>git push origin</code></pre>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Force Push</h3>
+                    <p>கட்டாயமாக மாற்றங்களை அனுப்பவும்</p>
+                    <div class="code-block small">
+                        <pre><code>git push --force</code></pre>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>டேக்குகள்</h3>
+                    <p>டேக்குகளை அனுப்பவும்</p>
+                    <div class="code-block small">
+                        <pre><code>git push --tags</code></pre>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>மீள் முயற்சி</h3>
+                    <p>பிழைகளை சரிசெய்யவும்</p>
+                    <div class="code-block small">
+                        <pre><code>git pull --rebase</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="Git Pull from GitHub.html" class="nav-tab prev">
+                <i class="fas fa-arrow-left"></i>
+                <span>முந்தைய</span>
+            </a>
+            <a href="Git GitHub Branch.html" class="nav-tab next">
+                <span>அடுத்தது</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Jassif Team Institution</h3>
+                <p>Leading educational institution providing quality programming education in Tamil.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#basic-push">அடிப்படை Push</a></li>
+                    <li><a href="#force-push">Force Push</a></li>
+                    <li><a href="#push-tags">டேக்குகள் Push</a></li>
+                    <li><a href="#troubleshooting">சிக்கல் தீர்த்தல்</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Location & Hours</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Jassif Team Institution. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Additional styles for this page */
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .concept-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-left: 4px solid var(--git-color);
+        }
+        
+        .concept-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .concept-icon {
+            font-size: 2rem;
+            color: var(--git-color);
+            margin-bottom: 1rem;
+        }
+        
+        .concept-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Step Header Styles */
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-number {
+            background: var(--git-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Screenshot Styles */
+        .screenshot-container {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .screenshot-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #dee2e6;
+        }
+        
+        .screenshot-caption {
+            margin-top: 0.5rem;
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        /* Code Block Styles */
+        .code-block {
+            background: #2d2d2d;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+        
+        .code-block.small {
+            margin: 0.5rem 0;
+        }
+        
+        .code-header {
+            background: #1a1a1a;
+            padding: 0.75rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        .copy-btn {
+            background: var(--git-color);
+            color: white;
+            border: none;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        
+        .copy-btn:hover {
+            background: #d35400;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        
+        .code-block code {
+            color: #f8f8f2;
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Warning Box */
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-left: 4px solid #fdcb6e;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        
+        .warning-icon {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+        
+        /* Success Box */
+        .success-box {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-left: 4px solid #28a745;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        
+        .success-icon {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+        
+        /* Troubleshooting Grid */
+        .troubleshooting-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .issue-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .issue-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .issue-icon.error { color: #dc3545; }
+        .issue-icon.warning { color: #ffc107; }
+        .issue-icon.info { color: #17a2b8; }
+        
+        .issue-card h4 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .concepts-grid,
+            .troubleshooting-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all content sections for animation
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Copy code functionality
+        function copyCode(button) {
+            const codeBlock = button.closest('.code-block');
+            const code = codeBlock.querySelector('code').textContent;
+            
+            navigator.clipboard.writeText(code).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'நகலெடுக்கப்பட்டது!';
+                button.style.background = '#27ae60';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Stash - Jassif Team Institution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h1>Jassif Team <span>Institution</span></h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Navigation Tabs -->
+    <div class="nav-tabs">
+        <a href="Git Tagging.html" class="nav-tab prev">
+            <i class="fas fa-arrow-left"></i>
+            <span>முந்தைய</span>
+        </a>
+        <a href="Git History.html" class="nav-tab next">
+            <span>அடுத்தது</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Git Stash</h2>
+            <p>Learn how to temporarily save your changes with Git stash</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Key Commands Section -->
+        <section class="content-section" id="key-commands">
+            <h2>Stashing-க்கான முக்கிய கட்டளைகள்</h2>
+            
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-save"></i>
+                    </div>
+                    <h3>git stash</h3>
+                    <p>உங்கள் மாற்றங்களை stash செய்ய</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-comment"></i>
+                    </div>
+                    <h3>git stash push -m "message"</h3>
+                    <p>ஒரு செய்தியுடன் stash செய்ய</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-list"></i>
+                    </div>
+                    <h3>git stash list</h3>
+                    <p>அனைத்து stashes-ஐ பட்டியலிடு</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>git stash branch &lt;branchname&gt;</h3>
+                    <p>ஒரு stash-லிருந்து branch உருவாக்க</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What is Git Stash Section -->
+        <section class="content-section" id="what-is-stash">
+            <h2>Git Stash என்றால் என்ன? ஏன் பயன்படுத்த வேண்டும்?</h2>
+            
+            <p>சில நேரங்களில் நீங்கள் விரைவாக பணிகளை மாற்ற வேண்டும் அல்லது ஒரு பிழையை சரிசெய்ய வேண்டும், ஆனால் உங்கள் வேலையை கமிட் செய்ய தயாராக இல்லை.</p>
+            
+            <p>git stash உங்கள் கமிட் செய்யப்படாத மாற்றங்களை சேமிக்கவும் ஒரு சுத்தமான பணி கோப்பகத்திற்குத் திரும்பவும் உங்களை அனுமதிக்கிறது.</p>
+            
+            <p>நீங்கள் பின்னர் திரும்பி வந்து உங்கள் மாற்றங்களை மீட்டெடுக்கலாம்.</p>
+            
+            <div class="tip-box">
+                <h4><span class="tip-icon">💼</span> பொதுவான பயன்பாட்டு நிகழ்வுகள்:</h4>
+                <ul>
+                    <li><strong>பாதுகாப்பாக branches மாற்றவும்:</strong> branches மாற்றுவதற்கு முன் உங்கள் வேலையை சேமிக்கவும்</li>
+                    <li><strong>அவசரநிலைகளை கையாளவும்:</strong> அவசரமான ஒன்றை சரிசெய்ய உங்கள் வேலையை stash செய்யவும், பின்னர் அதை மீட்டெடுக்கவும்</li>
+                    <li><strong>செயல்பாட்டில் உள்ள உங்கள் வேலையை பாதுகாப்பாக வைக்கவும்:</strong> குழப்பமான கமிட்டுகள் அல்லது மாற்றங்களை இழப்பதை தவிர்க்கவும்</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Stash Your Changes Section -->
+        <section class="content-section" id="stash-changes">
+            <h2>உங்கள் மாற்றங்களை Stash செய்யவும் (git stash)</h2>
+            
+            <p>உங்கள் தற்போதைய மாற்றங்களை (staged மற்றும் unstaged tracked கோப்புகள் இரண்டும்) சேமிக்கவும்:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: உங்கள் வேலையை Stash செய்யவும்</h3>
+                <pre><code class="command-input">git stash</code></pre>
+                <pre><code class="command-output">Saved working directory and index state WIP on main: 1234567 Add new feature</code></pre>
+            </div>
+
+            <div class="note-box">
+                <h4>எது stashed ஆகும்?</h4>
+                <ul>
+                    <li><strong>Tracked கோப்புகள்</strong> (staged மற்றும் unstaged இரண்டும்) இயல்பாக stashed ஆகும்</li>
+                    <li><strong>Untracked கோப்புகள்</strong> (இன்னும் Git-ல் சேர்க்கப்படாத புதிய கோப்புகள்) இயல்பாக stashed ஆகாது</li>
+                    <li>Untracked கோப்புகளையும் stash செய்ய, <code>git stash -u</code> (அல்லது <code>--include-untracked</code>) பயன்படுத்தவும்</li>
+                </ul>
+            </div>
+
+            <p>இந்த கட்டளை உங்கள் மாற்றங்களை சேமிக்கிறது மற்றும் உங்கள் பணி கோப்பகத்தை சுத்தம் செய்கிறது, அதனால் நீங்கள் பாதுகாப்பாக பணிகளை அல்லது branches மாற்றலாம்.</p>
+            
+            <p>உங்கள் மாற்றங்கள் இப்போது ஒரு stack-ல் சேமிக்கப்பட்டுள்ளன.</p>
+        </section>
+
+        <!-- Stash Stack Section -->
+        <section class="content-section" id="stash-stack">
+            <h2>Stash Stack என்றால் என்ன?</h2>
+            
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Stack கருத்து</h3>
+                    <p>நீங்கள் git stash இயக்கும் ஒவ்வொரு முறையும், உங்கள் மாற்றங்கள் ஒரு "stack"-ன் மேல் சேமிக்கப்படுகின்றன</p>
+                    <p>மிகச் சமீபத்திய stash மேலே உள்ளது, மேலும் நீங்கள் stashes-ஐ மேலிருந்து கீழாக apply அல்லது drop செய்யலாம், அல்லது பட்டியலில் இருந்து ஒரு குறிப்பிட்ட ஒன்றை தேர்ந்தெடுக்கலாம்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3>சுத்தமான பணி கோப்பகம்</h3>
+                    <p>உங்கள் பணி கோப்பகம் சுத்தமாக உள்ளது, மேலும் நீங்கள் branches மாறலாம் அல்லது புதுப்பிப்புகளை pull செய்யலாம்</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stash with Message Section -->
+        <section class="content-section" id="stash-message">
+            <h2>செய்தியுடன் Stash செய்யவும் (git stash push -m)</h2>
+            
+            <p>நீங்கள் எதை stash செய்தீர்கள் என நினைவில் வைக்க ஒரு செய்தியைச் சேர்க்கவும்:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: செய்தியுடன் Stash செய்யவும்</h3>
+                <pre><code class="command-input">git stash push -m "WIP: homepage redesign"</code></pre>
+                <pre><code class="command-output">Saved working directory and index state On main: WIP: homepage redesign</code></pre>
+            </div>
+
+            <div class="note-box">
+                <h4>குறிப்பு:</h4>
+                <p>இந்த கட்டளை உங்கள் stash-க்கு ஒரு விளக்கமான செய்தியைச் சேர்க்க உங்களை அனுமதிக்கிறது, அதனால் நீங்கள் என்ன வேலை செய்துகொண்டிருந்தீர்கள் என நினைவில் வைக்க முடியும்.</p>
+            </div>
+        </section>
+
+        <!-- List Stashes Section -->
+        <section class="content-section" id="list-stashes">
+            <h2>அனைத்து Stashes-ஐ பட்டியலிடுங்கள் (git stash list)</h2>
+            
+            <p>உங்கள் அனைத்து சேமிக்கப்பட்ட stashes-ஐயும் பார்க்கவும்:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: Stashes-ஐ பட்டியலிடவும்</h3>
+                <pre><code class="command-input">git stash list</code></pre>
+                <pre><code class="command-output">stash@{0}: On main: WIP: homepage redesign
+stash@{1}: WIP on main: 1234567 Add new feature</code></pre>
+            </div>
+
+            <p>இந்த கட்டளை இதுவரை நீங்கள் சேமித்த அனைத்து stashes-ஐயும், அவற்றின் பெயர்கள் மற்றும் செய்திகளுடன் காட்டுகிறது.</p>
+        </section>
+
+        <!-- Show Stash Section -->
+        <section class="content-section" id="show-stash">
+            <h2>Stash விவரங்களைக் காட்டவும் (git stash show)</h2>
+            
+            <p>சமீபத்திய stash-ல் என்ன மாற்றம் செய்யப்பட்டது என்பதைப் பார்க்கவும்:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: சமீபத்திய Stash-ஐக் காட்டவும்</h3>
+                <pre><code class="command-input">git stash show</code></pre>
+                <pre><code class="command-output"> src/index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)</code></pre>
+            </div>
+
+            <p>இந்த கட்டளை உங்கள் மிகச் சமீபத்திய stash-ல் எந்த கோப்புகள் மற்றும் மாற்றங்கள் உள்ளன என்பதின் சுருக்கத்தைத் தருகிறது.</p>
+
+            <p>முழு diff-ஐப் பார்க்க:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: முழு Diff-ஐக் காட்டவும்</h3>
+                <pre><code class="command-input">git stash show -p</code></pre>
+                <pre><code class="command-output">diff --git a/src/index.html b/src/index.html
+index 1234567..89abcde 100644
+--- a/src/index.html
++++ b/src/index.html
+@@ ...</code></pre>
+            </div>
+
+            <p>இந்த கட்டளை உங்கள் மிகச் சமீபத்திய stash-ல் சரியாக எந்த வரிகள் மாற்றப்பட்டன என்பதைக் காட்டுகிறது.</p>
+        </section>
+
+        <!-- Apply Stash Section -->
+        <section class="content-section" id="apply-stash">
+            <h2>சமீபத்திய Stash-ஐப் பயன்படுத்தவும் (git stash apply)</h2>
+            
+            <p>உங்கள் மிகச் சமீபத்திய stashed மாற்றங்களை மீட்டெடுக்கவும் (stash-ஐ stack-ல் வைத்திருக்கும்):</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: சமீபத்திய Stash-ஐப் பயன்படுத்தவும்</h3>
+                <pre><code class="command-input">git stash apply</code></pre>
+                <pre><code class="command-output">On branch main
+Changes not staged for commit:
+  (use "git add ..." to update what will be committed)
+  (use "git restore ..." to discard changes in working directory)
+    modified:   src/index.html</code></pre>
+            </div>
+
+            <div class="note-box">
+                <h4>குறிப்பு:</h4>
+                <p>இந்த கட்டளை உங்கள் மிகச் சமீபத்திய stashed மாற்றங்களை மீட்டெடுக்கிறது, ஆனால் stash-ஐ பட்டியலில் வைத்திருக்கிறது, அதனால் தேவைப்பட்டால் அதை மீண்டும் பயன்படுத்தலாம்.</p>
+            </div>
+        </section>
+
+        <!-- Apply Specific Stash Section -->
+        <section class="content-section" id="apply-specific">
+            <h2>குறிப்பிட்ட Stash-ஐப் பயன்படுத்தவும் (git stash apply stash@{n})</h2>
+            
+            <p>பட்டியலில் இருந்து ஒரு குறிப்பிட்ட stash-ஐ மீட்டெடுக்கவும்:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: குறிப்பிட்ட Stash-ஐப் பயன்படுத்தவும்</h3>
+                <pre><code class="command-input">git stash apply stash@{1}</code></pre>
+                <pre><code class="command-output">On branch main
+Changes not staged for commit:
+    modified:   src/index.html</code></pre>
+            </div>
+
+            <p>இந்த கட்டளை உங்கள் பட்டியலில் இருந்து மிகச் சமீபத்திய ஒன்றை மட்டும் அல்ல, ஒரு குறிப்பிட்ட stash-ஐ மீட்டெடுக்க உங்களை அனுமதிக்கிறது.</p>
+        </section>
+
+        <!-- Pop Stash Section -->
+        <section class="content-section" id="pop-stash">
+            <h2>Stash-ஐ Pop செய்யவும் (git stash pop)</h2>
+            
+            <p>சமீபத்திய stash-ஐப் பயன்படுத்தவும் மற்றும் அதை stack-லிருந்து அகற்றவும்:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: Stash-ஐ Pop செய்யவும்</h3>
+                <pre><code class="command-input">git stash pop</code></pre>
+                <pre><code class="command-output">On branch main
+Changes not staged for commit:
+    modified:   src/index.html
+Dropped refs/stash@{0} (abc1234d5678)</code></pre>
+            </div>
+
+            <p>இந்த கட்டளை உங்கள் மிகச் சமீபத்திய stash-ஐ மீட்டெடுக்கிறது மற்றும் அதே நேரத்தில் அதை பட்டியலில் இருந்து அகற்றுகிறது.</p>
+        </section>
+
+        <!-- Drop Stash Section -->
+        <section class="content-section" id="drop-stash">
+            <h2>Stash-ஐ Drop செய்யவும் (git stash drop)</h2>
+            
+            <p>உங்களுக்கு இனி தேவையில்லாத போது ஒரு குறிப்பிட்ட stash-ஐ நீக்கவும்:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: Stash-ஐ Drop செய்யவும்</h3>
+                <pre><code class="command-input">git stash drop stash@{0}</code></pre>
+                <pre><code class="command-output">Dropped stash@{0} (abc1234d5678)</code></pre>
+            </div>
+
+            <p>இந்த கட்டளை உங்களுக்கு இனி தேவையில்லாத போது உங்கள் பட்டியலில் இருந்து ஒரு குறிப்பிட்ட stash-ஐ நீக்குகிறது.</p>
+        </section>
+
+        <!-- Clear Stashes Section -->
+        <section class="content-section" id="clear-stashes">
+            <h2>அனைத்து Stashes-ஐயும் Clear செய்யவும் (git stash clear)</h2>
+            
+            <p>உங்கள் அனைத்து stashes-ஐயும் ஒரே நேரத்தில் நீக்கவும்:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: அனைத்து Stashes-ஐயும் Clear செய்யவும்</h3>
+                <pre><code class="command-input">git stash clear</code></pre>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ எச்சரிக்கை:</h4>
+                <p>இந்த கட்டளை உங்கள் அனைத்து stashes-ஐயும் ஒரே நேரத்தில் நீக்குகிறது. கவனமாக இருங்கள்! இதை மீளமுடியாது!</p>
+            </div>
+        </section>
+
+        <!-- Branch from Stash Section -->
+        <section class="content-section" id="branch-stash">
+            <h2>Stash-லிருந்து Branch உருவாக்கவும் (git stash branch)</h2>
+            
+            <p>ஒரு புதிய branch உருவாக்கி அதற்கு ஒரு stash-ஐப் பயன்படுத்தவும்.</p>
+            
+            <p>உங்கள் stashed வேலை அதன் சொந்த feature branch ஆக மாற வேண்டும் என்று நீங்கள் முடிவு செய்தால் பயனுள்ளது:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: Stash-லிருந்து Branch உருவாக்கவும்</h3>
+                <pre><code class="command-input">git stash branch new-feature stash@{0}</code></pre>
+                <pre><code class="command-output">Switched to a new branch 'new-feature'
+On branch new-feature
+Changes not staged for commit:
+    modified:   src/index.html
+Dropped stash@{0} (abc1234d5678)</code></pre>
+            </div>
+
+            <p>இந்த கட்டளை ஒரு புதிய branch உருவாக்கி உங்கள் stashed மாற்றங்களை அதற்குப் பயன்படுத்துகிறது.</p>
+            
+            <p>உங்கள் வேலை அதன் சொந்த feature branch ஆக மாற வேண்டும் என்று நீங்கள் முடிவு செய்தால் இது பயனுள்ளதாக இருக்கும்.</p>
+        </section>
+
+        <!-- Best Practices Section -->
+        <section class="content-section" id="best-practices">
+            <h2>Stashing-க்கான சிறந்த நடைமுறைகள்</h2>
+            
+            <div class="tip-box">
+                <h4><span class="tip-icon">🌟</span> பரிந்துரைகள்:</h4>
+                <ul>
+                    <li>Stashing செய்யும் போது தெளிவான செய்திகளைப் பயன்படுத்தவும்: <code>git stash push -m "WIP: feature name"</code></li>
+                    <li>நீண்டகால சேமிப்பகமாக stashes-ஐப் பயன்படுத்த வேண்டாம்—முடிந்தால் உங்கள் வேலையை கமிட் செய்யவும்</li>
+                    <li>உங்கள் stash பட்டியலை தவறாமல் சரிபார்க்கவும் மற்றும் உங்களுக்கு இனி தேவையில்லாத பழைய stashes-ஐ சுத்தம் செய்யவும்</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Troubleshooting Section -->
+        <section class="content-section" id="troubleshooting">
+            <h2>சிக்கல் தீர்வு</h2>
+            
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>உங்கள் மாற்றங்களை இழந்துவிட்டீர்களா?</h3>
+                    <p><strong>தீர்வு:</strong> stashed வேலையை மீட்டெடுக்க <code>git stash list</code> மற்றும் <code>git stash apply</code> முயற்சிக்கவும்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Stash சுத்தமாக apply ஆகவில்லையா?</h3>
+                    <p><strong>தீர்வு:</strong> நீங்கள் conflicts-ஐ தீர்க்க வேண்டியிருக்கலாம், ஒரு merge போல</p>
+                    <p>தீர்க்க உங்கள் கோப்புகளில் conflicts-ஐ Git குறிக்கும்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-file"></i>
+                    </div>
+                    <h3>Untracked கோப்புகள் காணவில்லையா?</h3>
+                    <p><strong>தீர்வு:</strong> இயல்பாக, untracked கோப்புகள் stashed ஆகாது</p>
+                    <p>அவற்றை stash செய்ய வேண்டும் என்றால், அடுத்த முறை <code>git stash -u</code> பயன்படுத்தவும்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-trash"></i>
+                    </div>
+                    <h3>தவறுதலாக அனைத்து stashes-ஐயும் clear செய்துவிட்டீர்களா?</h3>
+                    <p><strong>தீர்வு:</strong> துரதிர்ஷ்டவசமாக, <code>git stash clear</code> நிரந்தரமானது</p>
+                    <p>அதை இயக்குவதற்கு முன் எப்போதும் இரட்டை சரிபார்க்கவும்!</p>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <h4>குறிப்பு:</h4>
+                <p>Stashes தற்காலிக வேலைக்கு பயனுள்ளதாக இருக்கும், ஆனால் கமிட்டுகளுக்கு பதிலாக அல்ல!</p>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="content-section" id="summary">
+            <h2>சுருக்கம்</h2>
+            
+            <div class="tip-box">
+                <h4><span class="tip-icon">✅</span> நீங்கள் இப்போது கற்றுக்கொண்டவை:</h4>
+                <ul>
+                    <li>Git stash என்றால் என்ன மற்றும் எப்போது பயன்படுத்த வேண்டும்</li>
+                    <li>மாற்றங்களை stash செய்வது எப்படி</li>
+                    <li>Stashes-ஐ பட்டியலிடுவது மற்றும் அவற்றின் விவரங்களைப் பார்ப்பது எப்படி</li>
+                    <li>Stashes-ஐ apply, pop, மற்றும் drop செய்வது எப்படி</li>
+                    <li>Stash-லிருந்து புதிய branch உருவாக்குவது எப்படி</li>
+                    <li>Stashing-க்கான சிறந்த நடைமுறைகள்</li>
+                    <li>பொதுவான stash சிக்கல்களை சரிசெய்வது எப்படி</li>
+                </ul>
+            </div>
+
+            <div class="note-box">
+                <h4>அடுத்து என்ன?</h4>
+                <p>இப்போது தற்காலிக மாற்றங்களை stash செய்யத் தெரிந்து கொண்டீர்கள்! அடுத்த பாடத்தில், உங்கள் Git வரலாற்றை ஆராய்வது எப்படி என்பதைக் கற்றுக்கொள்வோம்.</p>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="Git Tagging.html" class="nav-tab prev">
+                <i class="fas fa-arrow-left"></i>
+                <span>முந்தைய</span>
+            </a>
+            <a href="Git History.html" class="nav-tab next">
+                <span>அடுத்தது</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Jassif Team Institution</h3>
+                <p>Leading educational institution providing quality programming education in Tamil.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#key-commands">முக்கிய கட்டளைகள்</a></li>
+                    <li><a href="#what-is-stash">Stash என்றால் என்ன</a></li>
+                    <li><a href="#stash-changes">மாற்றங்களை Stash செய்தல்</a></li>
+                    <li><a href="#apply-stash">Stash-ஐப் பயன்படுத்துதல்</a></li>
+                    <li><a href="#troubleshooting">சிக்கல் தீர்வு</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Location & Hours</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Jassif Team Institution. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Additional styles for this page */
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .concept-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-left: 4px solid var(--git-color);
+        }
+        
+        .concept-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .concept-icon {
+            font-size: 2rem;
+            color: var(--git-color);
+            margin-bottom: 1rem;
+        }
+        
+        .concept-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .code-example {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            overflow-x: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        .command-input {
+            color: #8be9fd;
+        }
+        
+        .command-output {
+            color: #50fa7b;
+        }
+        
+        .note-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .note-box h4 {
+            color: #1565c0;
+            margin-bottom: 0.5rem;
+        }
+        
+        .warning-box {
+            background-color: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .warning-box h4 {
+            color: #c62828;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .concepts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all content sections for animation
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Copy code functionality
+        document.querySelectorAll('.code-example').forEach(codeBlock => {
+            const copyButton = document.createElement('button');
+            copyButton.className = 'copy-btn';
+            copyButton.innerHTML = '<i class="far fa-copy"></i> நகலெடு';
+            copyButton.style.cssText = `
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: rgba(255,255,255,0.1);
+                border: 1px solid rgba(255,255,255,0.3);
+                color: white;
+                padding: 5px 10px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 0.8rem;
+                transition: all 0.3s;
+            `;
+            
+            copyButton.addEventListener('mouseenter', () => {
+                copyButton.style.background = 'rgba(255,255,255,0.2)';
+            });
+            
+            copyButton.addEventListener('mouseleave', () => {
+                copyButton.style.background = 'rgba(255,255,255,0.1)';
+            });
+            
+            copyButton.addEventListener('click', () => {
+                const code = codeBlock.querySelector('code').textContent;
+                navigator.clipboard.writeText(code).then(() => {
+                    copyButton.innerHTML = '<i class="fas fa-check"></i> நகலெடுக்கப்பட்டது!';
+                    setTimeout(() => {
+                        copyButton.innerHTML = '<i class="far fa-copy"></i> நகலெடு';
+                    }, 2000);
+                });
+            });
+            
+            codeBlock.style.position = 'relative';
+            codeBlock.appendChild(copyButton);
+        });
+    </script>
+</body>
+</html>

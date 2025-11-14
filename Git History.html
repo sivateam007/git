@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git History - Jassif Team Institution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h1>Jassif Team <span>Institution</span></h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Navigation Tabs -->
+    <div class="nav-tabs">
+        <a href="Git Stash.html" class="nav-tab prev">
+            <i class="fas fa-arrow-left"></i>
+            <span>முந்தைய</span>
+        </a>
+        <a href="Git Help.html" class="nav-tab next">
+            <span>அடுத்தது</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Git History</h2>
+            <p>Learn how to explore your project's history and track changes</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- What is Git History Section -->
+        <section class="content-section" id="what-is-history">
+            <h2>Git History என்றால் என்ன? ஏன் பயன்படுத்த வேண்டும்?</h2>
+            
+            <p>Git உங்கள் திட்டத்தில் செய்யப்பட்ட ஒவ்வொரு மாற்றத்தின் விரிவான பதிவையும் வைத்திருக்கிறது.</p>
+            
+            <p>எது மாற்றம் செய்யப்பட்டது, எப்போது, யார் மாற்றம் செய்தார்கள் என்பதைப் பார்க்க நீங்கள் வரலாறு கட்டளைகளைப் பயன்படுத்தலாம்.</p>
+            
+            <p>முன்னேற்றத்தைக் கண்காணிக்க, பிழைகளைக் கண்டறிய மற்றும் உங்கள் திட்டத்தின் பரிணாமத்தைப் புரிந்து கொள்ள இது பயனுள்ளதாக இருக்கும்.</p>
+        </section>
+
+        <!-- Key Commands Section -->
+        <section class="content-section" id="key-commands">
+            <h2>வரலாற்றைப் பார்க்க முக்கிய கட்டளைகள்</h2>
+            
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>git log</h3>
+                    <p>முழு கமிட் வரலாற்றைக் காட்டு</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-list"></i>
+                    </div>
+                    <h3>git log --oneline</h3>
+                    <p>கமிட்டுகளின் சுருக்கத்தைக் காட்டு</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>git show &lt;commit&gt;</h3>
+                    <p>குறிப்பிட்ட கமிட்டின் விவரங்களைக் காட்டு</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>git diff</h3>
+                    <p>unstaged மாற்றங்களைப் பார்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>git diff --staged</h3>
+                    <p>staged மாற்றங்களைப் பார்</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Practices Section -->
+        <section class="content-section" id="best-practices">
+            <h2>வரலாற்றைப் பார்க்க சிறந்த நடைமுறைகள்</h2>
+            
+            <div class="tip-box">
+                <h4><span class="tip-icon">🌟</span> பரிந்துரைகள்:</h4>
+                <ul>
+                    <li>உங்கள் வரலாற்றை தெளிவாக வைத்திருக்க அடிக்கடி, அர்த்தமுள்ள கமிட்டுகளை செய்யவும்</li>
+                    <li>தெளிவான கமிட் செய்திகளை எழுதுங்கள், அதனால் நீங்களும் உங்கள் குழுவும் பின்னர் மாற்றங்களைப் புரிந்து கொள்ள முடியும்</li>
+                    <li>உங்கள் கமிட் வரலாற்றின் விரைவான கண்ணோட்டத்திற்கு <code>git log --oneline</code> பயன்படுத்தவும்</li>
+                    <li>உங்கள் வேலையை மதிப்பாய்வு செய்ய கமிட் செய்வதற்கு முன் <code>git diff</code> பயன்படுத்தவும்</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- See Commit History Section -->
+        <section class="content-section" id="commit-history">
+            <h2>கமிட் வரலாற்றைப் பார்க்கவும் (git log)</h2>
+            
+            <p>உங்கள் களஞ்சியத்தில் உள்ள அனைத்து கமிட்டுகளின் விரிவான பட்டியலைக் காட்டவும்:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: முழு கமிட் வரலாறு</h3>
+                <pre><code class="command-input">git log</code></pre>
+                <pre><code class="command-output">commit 09f4acd3f8836b7f6fc44ad9e012f82faf861803 (HEAD -> master)
+Author: Jassif Team 
+Date:   Fri Mar 26 09:35:54 2021 +0100
+
+    Updated index.html with a new line</code></pre>
+            </div>
+
+            <p>இந்த கட்டளை அனைத்து கமிட்டுகளையும், ஆசிரியர், தேதி மற்றும் செய்தி உட்பட காட்டுகிறது.</p>
+            
+            <div class="note-box">
+                <h4>குறிப்பு:</h4>
+                <p>பதிவைப் பார்க்க அம்பு விசைகளைப் பயன்படுத்தவும், மற்றும் வெளியேற q அழுத்தவும்.</p>
+                <p><strong>உதவிக்குறிப்பு:</strong> பதிவைப் பார்க்கும் போது, ஒரு வார்த்தையைத் தேட / உடன் உங்கள் தேடல் சொல்லைத் தட்டச்சு செய்யலாம் (எடுத்துக்காட்டாக, /fix), பின்னர் அடுத்த பொருத்தத்திற்குச் செல்ல n அழுத்தவும்.</p>
+                <p>எந்த நேரத்திலும் வெளியேற q அழுத்தவும்.</p>
+            </div>
+        </section>
+
+        <!-- Show Commit Details Section -->
+        <section class="content-section" id="show-commit">
+            <h2>கமிட் விவரங்களைக் காட்டவும் (git show &lt;commit&gt;)</h2>
+            
+            <p>குறிப்பிட்ட கமிட்டுக்கான அனைத்து விவரங்களையும் மாற்றங்களையும் பார்க்கவும்:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: கமிட் விவரங்களைக் காட்டவும்</h3>
+                <pre><code class="command-input">git show 09f4acd</code></pre>
+                <pre><code class="command-output">commit 09f4acd3f8836b7f6fc44ad9e012f82faf861803 (HEAD -> master)
+Author: Jassif Team 
+Date:   Fri Mar 26 09:35:54 2021 +0100
+
+    Updated index.html with a new line
+
+diff --git a/index.html b/index.html
+index 1234567..89abcde 100644
+--- a/index.html
++++ b/index.html
+@@ ...
++New Title</code></pre>
+            </div>
+
+            <p>இந்த கட்டளை ஒரு கமிட்டைப் பற்றிய எல்லாவற்றையும் காட்டுகிறது: யார் செய்தார்கள், எப்போது, செய்தி, மற்றும் சரியான மாற்றங்கள்.</p>
+        </section>
+
+        <!-- Compare Changes Section -->
+        <section class="content-section" id="compare-changes">
+            <h2>மாற்றங்களை ஒப்பிடவும் (git diff)</h2>
+            
+            <p>உங்கள் பணி கோப்பகத்திற்கும் கடைசி கமிட்டிற்கும் இடையே என்ன வித்தியாசம் என்பதைப் பார்க்கவும் (unstaged மாற்றங்கள்):</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: Unstaged மாற்றங்களைப் பார்க்கவும்</h3>
+                <pre><code class="command-input">git diff</code></pre>
+                <pre><code class="command-output">diff --git a/index.html b/index.html
+index 1234567..89abcde 100644
+--- a/index.html
++++ b/index.html
+@@ ...
+-Old Title
++New Title</code></pre>
+            </div>
+
+            <p>இந்த கட்டளை நீங்கள் செய்த ஆனால் இன்னும் கமிட் செய்ய staged செய்யப்படாத மாற்றங்களைக் காட்டுகிறது.</p>
+        </section>
+
+        <!-- Compare Staged Changes Section -->
+        <section class="content-section" id="compare-staged">
+            <h2>Staged மாற்றங்களை ஒப்பிடவும் (git diff --staged)</h2>
+            
+            <p>உங்கள் staged கோப்புகளுக்கும் கடைசி கமிட்டிற்கும் இடையே என்ன வித்தியாசம் என்பதைப் பார்க்கவும்:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: Staged மாற்றங்களைப் பார்க்கவும்</h3>
+                <pre><code class="command-input">git diff --staged</code></pre>
+                <pre><code class="command-output">diff --git a/index.html b/index.html
+index 1234567..89abcde 100644
+--- a/index.html
++++ b/index.html
+@@ ...
+-Old Title
++New Title</code></pre>
+            </div>
+
+            <p>இந்த கட்டளை staged மற்றும் கமிட் செய்யத் தயாராக உள்ள மாற்றங்களைக் காட்டுகிறது.</p>
+        </section>
+
+        <!-- Compare Two Commits Section -->
+        <section class="content-section" id="compare-commits">
+            <h2>இரண்டு கமிட்டுகளை ஒப்பிடவும் (git diff &lt;commit1&gt; &lt;commit2&gt;)</h2>
+            
+            <p>எந்த இரண்டு கமிட்டுகளுக்கும் இடையே என்ன மாற்றம் நடந்தது என்பதைப் பார்க்கவும்:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: இரண்டு கமிட்டுகளை ஒப்பிடவும்</h3>
+                <pre><code class="command-input">git diff 1234567 89abcde</code></pre>
+                <pre><code class="command-output">diff --git a/index.html b/index.html
+index 1234567..89abcde 100644
+--- a/index.html
++++ b/index.html
+@@ ...
+-Old Title
++New Title</code></pre>
+            </div>
+
+            <p>இந்த கட்டளை இரண்டு குறிப்பிட்ட கமிட்டுகளுக்கு இடையே உள்ள வித்தியாசங்களைக் காட்டுகிறது.</p>
+        </section>
+
+        <!-- Show Summary Section -->
+        <section class="content-section" id="show-summary">
+            <h2>கமிட்டுகளின் சுருக்கத்தைக் காட்டவும் (git log --oneline)</h2>
+            
+            <p>ஒவ்வொரு கமிட்டின் குறுகிய சுருக்கத்தைக் காட்டவும் (விரைவான கண்ணோட்டத்திற்கு சிறந்தது):</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: Oneline பதிவு</h3>
+                <pre><code class="command-input">git log --oneline</code></pre>
+                <pre><code class="command-output">09f4acd Updated index.html with a new line
+8e7b2c1 Add about page
+1a2b3c4 Initial commit</code></pre>
+            </div>
+
+            <p>இந்த கட்டளை எளிதாக வாசிப்பதற்காக ஒவ்வொரு கமிட்டையும் ஒரு வரியில் காட்டுகிறது.</p>
+        </section>
+
+        <!-- Show by Author Section -->
+        <section class="content-section" id="show-author">
+            <h2>ஆசிரியர் மூலம் கமிட்டுகளைக் காட்டவும் (git log --author="Alice")</h2>
+            
+            <p>குறிப்பிட்ட ஆசிரியரால் செய்யப்பட்ட கமிட்டுகளை மட்டும் பார்க்கவும்:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: ஆசிரியர் மூலம் கமிட்டுகள்</h3>
+                <pre><code class="command-input">git log --author="Alice"</code></pre>
+                <pre><code class="command-output">commit 1a2b3c4d5e6f7g8h9i0j
+Author: Alice 
+Date:   Mon Mar 22 10:12:34 2021 +0100
+
+    Add about page</code></pre>
+            </div>
+
+            <p>இந்த கட்டளை நீங்கள் குறிப்பிடும் ஆசிரியரால் மட்டும் கமிட்டுகளைக் காட்ட பதிவை வடிகட்டுகிறது.</p>
+        </section>
+
+        <!-- Show Recent Section -->
+        <section class="content-section" id="show-recent">
+            <h2>சமீபத்திய கமிட்டுகளைக் காட்டவும் (git log --since="2 weeks ago")</h2>
+            
+            <p>கடந்த இரண்டு வாரங்களில் செய்யப்பட்ட கமிட்டுகளை மட்டும் பார்க்கவும்:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: சமீபத்திய கமிட்டுகள்</h3>
+                <pre><code class="command-input">git log --since="2 weeks ago"</code></pre>
+                <pre><code class="command-output">commit 09f4acd3f8836b7f6fc44ad9e012f82faf861803
+Author: Jassif Team 
+Date:   Fri Mar 26 09:35:54 2021 +0100
+
+    Updated index.html with a new line</code></pre>
+            </div>
+
+            <p>இந்த கட்டளை சமீபத்திய காலகட்டத்தில் செய்யப்பட்ட கமிட்டுகளை மட்டும் காட்டுகிறது.</p>
+        </section>
+
+        <!-- Show Files Changed Section -->
+        <section class="content-section" id="show-files">
+            <h2>ஒவ்வொரு கமிட்டிலும் மாற்றப்பட்ட கோப்புகளைக் காட்டவும் (git log --stat)</h2>
+            
+            <p>ஒவ்வொரு கமிட்டிலும் எந்த கோப்புகள் மாற்றப்பட்டன மற்றும் எத்தனை வரிகள் சேர்க்கப்பட்டன அல்லது நீக்கப்பட்டன என்பதைப் பார்க்கவும்:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: புள்ளிவிவரங்களுடன் பதிவு</h3>
+                <pre><code class="command-input">git log --stat</code></pre>
+                <pre><code class="command-output">commit 09f4acd3f8836b7f6fc44ad9e012f82faf861803
+Author: Jassif Team 
+Date:   Fri Mar 26 09:35:54 2021 +0100
+
+    Updated index.html with a new line
+
+index.html | 2 +-
+1 file changed, 1 insertion(+), 1 deletion(-)</code></pre>
+            </div>
+
+            <p>இந்த கட்டளை பதிவில் உள்ள ஒவ்வொரு கமிட்டிற்கும் கோப்பு மாற்றங்களின் சுருக்கத்தைச் சேர்க்கிறது.</p>
+        </section>
+
+        <!-- Show Branch Graph Section -->
+        <section class="content-section" id="show-graph">
+            <h2>Branch வரைபடத்தைக் காட்டவும் (git log --graph)</h2>
+            
+            <p>உங்கள் branch வரலாற்றின் எளிய ASCII வரைபடத்தைப் பார்க்கவும் (merges-ஐ காட்சிப்படுத்த சிறந்தது):</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: வரைபடத்துடன் பதிவு</h3>
+                <pre><code class="command-input">git log --graph --oneline</code></pre>
+                <pre><code class="command-output">* 09f4acd Updated index.html with a new line
+* 8e7b2c1 Add about page
+|\
+| * aabbccd Merge branch 'feature-x'
+|/</code></pre>
+            </div>
+
+            <p>இந்த கட்டளை உங்கள் branch மற்றும் merge வரலாற்றின் எளிய வரைபடத்தைக் காட்டுகிறது.</p>
+        </section>
+
+        <!-- Troubleshooting Section -->
+        <section class="content-section" id="troubleshooting">
+            <h2>சிக்கல் தீர்வு</h2>
+            
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-eye-slash"></i>
+                    </div>
+                    <h3>உங்கள் மாற்றங்களைப் பார்க்க முடியவில்லையா?</h3>
+                    <p><strong>தீர்வு:</strong> நீங்கள் உங்கள் வேலையை கமிட் செய்துள்ளீர்களா என்பதை உறுதிப்படுத்தவும். கமிட் செய்யப்படாத மாற்றங்கள் வரலாற்றில் தோன்றாது</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-scroll"></i>
+                    </div>
+                    <h3>பதிவு மிக நீளமாக உள்ளதா?</h3>
+                    <p><strong>தீர்வு:</strong> அதை எளிதாக வாசிக்க <code>git log --oneline</code> அல்லது <code>git log --since</code> பயன்படுத்தவும்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-door-open"></i>
+                    </div>
+                    <h3>பதிவு காட்சியில் இருந்து எப்படி வெளியேறுவது?</h3>
+                    <p><strong>தீர்வு:</strong> பதிவு அல்லது diff காட்சியிலிருந்து வெளியேற q அழுத்தவும்</p>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <h4>குறிப்பு:</h4>
+                <p>உங்கள் வரலாற்றை ஆராய்வது எது மாற்றம் செய்யப்பட்டது, எப்போது, ஏன் என்பதைப் புரிந்து கொள்ள உதவுகிறது.</p>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="content-section" id="summary">
+            <h2>சுருக்கம்</h2>
+            
+            <div class="tip-box">
+                <h4><span class="tip-icon">✅</span> நீங்கள் இப்போது கற்றுக்கொண்டவை:</h4>
+                <ul>
+                    <li>Git வரலாற்றின் முக்கியத்துவம்</li>
+                    <li>கமிட் வரலாற்றைப் பார்ப்பது எப்படி</li>
+                    <li>குறிப்பிட்ட கமிட்டுகளின் விவரங்களைப் பார்ப்பது எப்படி</li>
+                    <li>மாற்றங்களை ஒப்பிடுவது எப்படி</li>
+                    <li>வரலாற்றை வடிகட்டி பார்ப்பது எப்படி</li>
+                    <li>Branch வரலாற்றை காட்சிப்படுத்துவது எப்படி</li>
+                    <li>பொதுவான வரலாறு சிக்கல்களை சரிசெய்வது எப்படி</li>
+                </ul>
+            </div>
+
+            <div class="note-box">
+                <h4>அடுத்து என்ன?</h4>
+                <p>இப்போது உங்கள் திட்ட வரலாற்றை ஆராயத் தெரிந்து கொண்டீர்கள்! அடுத்த பாடத்தில், Git உதவி கட்டளைகளைப் பயன்படுத்துவது எப்படி என்பதைக் கற்றுக்கொள்வோம்.</p>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="Git Stash.html" class="nav-tab prev">
+                <i class="fas fa-arrow-left"></i>
+                <span>முந்தைய</span>
+            </a>
+            <a href="Git Help.html" class="nav-tab next">
+                <span>அடுத்தது</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Jassif Team Institution</h3>
+                <p>Leading educational institution providing quality programming education in Tamil.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#what-is-history">வரலாறு என்றால் என்ன</a></li>
+                    <li><a href="#key-commands">முக்கிய கட்டளைகள்</a></li>
+                    <li><a href="#commit-history">கமிட் வரலாறு</a></li>
+                    <li><a href="#compare-changes">மாற்றங்களை ஒப்பிடுதல்</a></li>
+                    <li><a href="#troubleshooting">சிக்கல் தீர்வு</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Location & Hours</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Jassif Team Institution. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Additional styles for this page */
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .concept-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-left: 4px solid var(--git-color);
+        }
+        
+        .concept-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .concept-icon {
+            font-size: 2rem;
+            color: var(--git-color);
+            margin-bottom: 1rem;
+        }
+        
+        .concept-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .code-example {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            overflow-x: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        .command-input {
+            color: #8be9fd;
+        }
+        
+        .command-output {
+            color: #50fa7b;
+        }
+        
+        .note-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .note-box h4 {
+            color: #1565c0;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .concepts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all content sections for animation
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Copy code functionality
+        document.querySelectorAll('.code-example').forEach(codeBlock => {
+            const copyButton = document.createElement('button');
+            copyButton.className = 'copy-btn';
+            copyButton.innerHTML = '<i class="far fa-copy"></i> நகலெடு';
+            copyButton.style.cssText = `
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: rgba(255,255,255,0.1);
+                border: 1px solid rgba(255,255,255,0.3);
+                color: white;
+                padding: 5px 10px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 0.8rem;
+                transition: all 0.3s;
+            `;
+            
+            copyButton.addEventListener('mouseenter', () => {
+                copyButton.style.background = 'rgba(255,255,255,0.2)';
+            });
+            
+            copyButton.addEventListener('mouseleave', () => {
+                copyButton.style.background = 'rgba(255,255,255,0.1)';
+            });
+            
+            copyButton.addEventListener('click', () => {
+                const code = codeBlock.querySelector('code').textContent;
+                navigator.clipboard.writeText(code).then(() => {
+                    copyButton.innerHTML = '<i class="fas fa-check"></i> நகலெடுக்கப்பட்டது!';
+                    setTimeout(() => {
+                        copyButton.innerHTML = '<i class="far fa-copy"></i> நகலெடு';
+                    }, 2000);
+                });
+            });
+            
+            codeBlock.style.position = 'relative';
+            codeBlock.appendChild(copyButton);
+        });
+    </script>
+</body>
+</html>

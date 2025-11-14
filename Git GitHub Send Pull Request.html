@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pull Request அனுப்பவும் - Jassif Team Institution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h1>Jassif Team <span>Institution</span></h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Navigation Tabs -->
+    <div class="nav-tabs">
+        <a href="Git Clone from GitHub.html" class="nav-tab prev">
+            <i class="fas fa-arrow-left"></i>
+            <span>முந்தைய</span>
+        </a>
+        <a href="Git Revert.html" class="nav-tab next">
+            <span>அடுத்தது</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>GitHub Pull Request அனுப்பவும்</h2>
+            <p>அசல் களஞ்சியத்திற்கு உங்கள் மாற்றங்களைப் பரிந்துரைக்கவும்</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Push Changes to Fork -->
+        <section class="content-section" id="push-changes">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <h2>எங்கள் GitHub ஃபோர்க்கில் மாற்றங்களை புஷ் செய்யவும்</h2>
+            </div>
+            
+            <p>எங்கள் உள்ளூர் Git-க்கு நாங்கள் நிறைய மாற்றங்களைச் செய்துள்ளோம்.</p>
+            
+            <p>இப்போது அவற்றை எங்கள் GitHub ஃபோர்க்கில் புஷ் செய்கிறோம்:</p>
+            
+            <p>மாற்றங்களை கமிட் செய்யவும்:</p>
+            
+            <div class="code-example">
+                <h3>உதாரணம்</h3>
+                <pre><code class="command-input">git push origin</code>
+<span class="command-output">Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 393.96 KiB | 32.83 MiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/kaijim/jassifteam-test.github.io.git
+   facaeae..ebb1a5c  master -> master</span></code></pre>
+            </div>
+            
+            <p>GitHub-க்குச் செல்லவும், களஞ்சியத்தில் ஒரு புதிய கமிட் இருப்பதை நாங்கள் காண்கிறோம். மேலும் அசல் களஞ்சியத்திற்கு ஒரு Pull Request-ஐ அனுப்பலாம்:</p>
+            
+            <div class="screenshot-container">
+                <img src="github25.png" alt="GitHub Fork Pull Request" class="screenshot-image">
+                <p class="screenshot-caption">GitHub ஃபோர்க் Pull Request</p>
+            </div>
+            
+            <p>அதைக் கிளிக் செய்து ஒரு pull request-ஐ உருவாக்கவும்:</p>
+            
+            <div class="screenshot-container">
+                <img src="github26.png" alt="GitHub Fork Create Pull Request" class="screenshot-image">
+                <p class="screenshot-caption">GitHub ஃபோர்க் Pull Request உருவாக்கவும்</p>
+            </div>
+            
+            <p>நிர்வாகிகளுக்கான விளக்கத்தைச் சேர்ப்பதை நினைவில் கொள்ளுங்கள்.</p>
+            
+            <div class="screenshot-container">
+                <img src="github27.png" alt="GitHub Fork Create Pull Request Comment" class="screenshot-image">
+                <p class="screenshot-caption">GitHub ஃபோர்க் Pull Request கருத்து</p>
+            </div>
+            
+            <p>Pull Request அனுப்பப்பட்டது:</p>
+            
+            <div class="screenshot-container">
+                <img src="github28.png" alt="GitHub Fork Pull Request Sent" class="screenshot-image">
+                <p class="screenshot-caption">GitHub ஃபோர்க் Pull Request அனுப்பப்பட்டது</p>
+            </div>
+        </section>
+
+        <!-- Approving Pull Requests -->
+        <section class="content-section" id="approving-pr">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <h2>Pull Requests-ஐ அங்கீகரித்தல்</h2>
+            </div>
+            
+            <p>இப்போது அணுகல் உள்ள எந்த உறுப்பினரும் அசல் களஞ்சியத்தைப் பார்க்கும் போது Pull Request-ஐப் பார்க்க முடியும்:</p>
+            
+            <div class="screenshot-container">
+                <img src="github29.png" alt="GitHub New Pull Request" class="screenshot-image">
+                <p class="screenshot-caption">GitHub புதிய Pull Request</p>
+            </div>
+            
+            <p>மேலும் அவர்கள் முன்மொழியப்பட்ட மாற்றங்களைப் பார்க்க முடியும்:</p>
+            
+            <div class="screenshot-container">
+                <img src="github30.png" alt="GitHub Pull Requests Overview" class="screenshot-image">
+                <p class="screenshot-caption">GitHub Pull Requests கண்ணோட்டம்</p>
+            </div>
+            
+            <p>மாற்றங்கள் குறித்து கருத்து தெரிவித்து இணைக்கவும்:</p>
+            
+            <div class="screenshot-container">
+                <img src="github31.png" alt="GitHub Pull Request Merge" class="screenshot-image">
+                <p class="screenshot-caption">GitHub Pull Request இணைத்தல்</p>
+            </div>
+            
+            <p>உறுதிப்படுத்தவும்:</p>
+            
+            <div class="screenshot-container">
+                <img src="github32.png" alt="GitHub Pull Request Confirm Merge" class="screenshot-image">
+                <p class="screenshot-caption">GitHub Pull Request இணைப்பை உறுதிப்படுத்தவும்</p>
+            </div>
+            
+            <p>மேலும் மாற்றங்கள் மாஸ்டருடன் இணைக்கப்பட்டுள்ளன:</p>
+            
+            <div class="screenshot-container">
+                <img src="github33.png" alt="GitHub Pull Request Merged" class="screenshot-image">
+                <p class="screenshot-caption">GitHub Pull Request இணைக்கப்பட்டது</p>
+            </div>
+            
+            <div class="success-box">
+                <h4><span class="success-icon">🎉</span> வாழ்த்துகள்!</h4>
+                <p>இப்போது நீங்கள் முயற்சிக்கவும்! GitHub-ல் உள்ள களஞ்சியங்களுக்கு உங்கள் சொந்த பங்களிப்புகளைச் செய்ய இப்போது நீங்கள் தயாராக உள்ளீர்கள்.</p>
+            </div>
+        </section>
+
+        <!-- Pull Request Workflow -->
+        <section class="content-section" id="pr-workflow">
+            <h2>Pull Request பணிப்பாய்வு</h2>
+            
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>ஃபோர்க் செய்யவும்</h4>
+                        <p>களஞ்சியத்தை உங்கள் கணக்கில் நகலெடுக்கவும்</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>குளோன் செய்யவும்</h4>
+                        <p>உங்கள் உள்ளூர் கணினிக்கு பதிவிறக்கவும்</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>மாற்றங்களைச் செய்யவும்</h4>
+                        <p>உங்கள் உள்ளூர் நகலில் திருத்தங்களைச் செய்யவும்</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>புஷ் செய்யவும்</h4>
+                        <p>உங்கள் ஃபோர்க்கில் மாற்றங்களைப் பதிவேற்றவும்</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Pull Request</h4>
+                        <p>அசல் களஞ்சியத்திற்கு மாற்றங்களைப் பரிந்துரைக்கவும்</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Practices -->
+        <section class="content-section" id="best-practices">
+            <h2>Pull Request சிறந்த நடைமுறைகள்</h2>
+            
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-comment-alt"></i>
+                    </div>
+                    <h3>தெளிவான விளக்கம்</h3>
+                    <p>உங்கள் மாற்றங்கள் என்ன, ஏன் செய்தீர்கள் என்பதை விளக்கவும்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>சிறிய மாற்றங்கள்</h3>
+                    <p>ஒரே முறையில் பல மாற்றங்களைச் செய்யாமல் இருப்பது நல்லது</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>சோதனை</h3>
+                    <p>புஷ் செய்வதற்கு முன் உங்கள் மாற்றங்களை சோதிக்கவும்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>அப்டேட்</h3>
+                    <p>அசல் களஞ்சியத்துடன் உங்கள் ஃபோர்க்கை ஒத்திசைக்கவும்</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Reference -->
+        <section class="content-section" id="quick-reference">
+            <h2>விரைவு குறிப்பு</h2>
+            
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <h3>புஷ்</h3>
+                    <p>மாற்றங்களை ரிமோட்டில் பதிவேற்றவும்</p>
+                    <div class="code-block small">
+                        <pre><code>git push origin</code></pre>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>Pull Request</h3>
+                    <p>மாற்றங்களைப் பரிந்துரைக்கவும்</p>
+                    <p><strong>முறை:</strong> GitHub UI</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>மதிப்பாய்வு</h3>
+                    <p>மாற்றங்களை மதிப்பாய்வு செய்யவும்</p>
+                    <p><strong>முறை:</strong> GitHub UI</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <h3>இணைத்தல்</h3>
+                    <p>மாற்றங்களை ஏற்றுக்கொள்ளவும்</p>
+                    <p><strong>முறை:</strong> GitHub UI</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="Git Clone from GitHub.html" class="nav-tab prev">
+                <i class="fas fa-arrow-left"></i>
+                <span>முந்தைய</span>
+            </a>
+            <a href="Git Revert.html" class="nav-tab next">
+                <span>அடுத்தது</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Jassif Team Institution</h3>
+                <p>Leading educational institution providing quality programming education in Tamil.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#push-changes">மாற்றங்களை புஷ் செய்யவும்</a></li>
+                    <li><a href="#approving-pr">Pull Requests அங்கீகரித்தல்</a></li>
+                    <li><a href="#pr-workflow">Pull Request பணிப்பாய்வு</a></li>
+                    <li><a href="#best-practices">சிறந்த நடைமுறைகள்</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Location & Hours</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Jassif Team Institution. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Additional styles for this page */
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .concept-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-left: 4px solid var(--git-color);
+        }
+        
+        .concept-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .concept-icon {
+            font-size: 2rem;
+            color: var(--git-color);
+            margin-bottom: 1rem;
+        }
+        
+        .concept-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Step Header Styles */
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-number {
+            background: var(--git-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Screenshot Styles */
+        .screenshot-container {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .screenshot-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #dee2e6;
+        }
+        
+        .screenshot-caption {
+            margin-top: 0.5rem;
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        /* Workflow Steps */
+        .workflow-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .workflow-step {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            flex: 1;
+            min-width: 180px;
+            margin: 0.5rem;
+        }
+        
+        .workflow-step .step-number {
+            width: 30px;
+            height: 30px;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--dark);
+        }
+        
+        .step-content p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .workflow-arrow {
+            color: var(--git-color);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        /* Code Block Styles */
+        .code-block {
+            background: #2d2d2d;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+        
+        .code-block.small {
+            margin: 0.5rem 0;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        
+        .code-block code {
+            color: #f8f8f2;
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Success Box */
+        .success-box {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            border-left: 6px solid #ffd700;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            color: white;
+            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+        }
+        
+        .success-icon {
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .concepts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .workflow-steps {
+                flex-direction: column;
+            }
+            
+            .workflow-arrow {
+                transform: rotate(90deg);
+                margin: 1rem 0;
+            }
+        }
+    </style>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all content sections for animation
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

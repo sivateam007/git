@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Hooks - Jassif Team Institution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h1>Jassif Team <span>Institution</span></h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Navigation Tabs -->
+    <div class="nav-tabs">
+        <a href="Git CI_CD.html" class="nav-tab prev">
+            <i class="fas fa-arrow-left"></i>
+            <span>முந்தைய</span>
+        </a>
+        <a href="Git Submodules.html" class="nav-tab next">
+            <span>அடுத்தது</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Git Hooks</h2>
+            <p>தானியங்கி ஸ்கிரிப்ட்கள் - குறிப்பிட்ட Git நிகழ்வுகளில் தானாக இயங்கும்</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- What are Git Hooks -->
+        <section class="content-section" id="what-are-hooks">
+            <h2>Git Hooks என்றால் என்ன?</h2>
+            
+            <p>Git hooks என்பது குறிப்பிட்ட Git நிகழ்வுகள் நடக்கும் போது தானாக இயங்கும் ஸ்கிரிப்ட்கள் ஆகும், கமிட் செய்தல் அல்லது குறியீட்டை push செய்தல் போன்றவை.</p>
+        </section>
+
+        <!-- Why Use Hooks -->
+        <section class="content-section" id="why-use-hooks">
+            <h2>ஏன் Hooks பயன்படுத்த வேண்டும்?</h2>
+            
+            <p>Hooks மீண்டும் மீண்டும் செய்யும் பணிகளை தானியங்கி செய்யவும், கோடிங் தரங்களை செயல்படுத்தவும், பிரச்சனைகளை விரைவில் கண்டறியவும் உதவுகின்றன.</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3>சோதனைகளை இயக்கவும்</h3>
+                    <p>ஒவ்வொரு கமிட் அல்லது push-க்கு முன் சோதனைகளை இயக்கவும்</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>குறியீட்டு பாணியை சரிபார்க்கவும்</h3>
+                    <p>குறியீட்டு பாணியை தானாகவே சரிபார்க்கவும்</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-ban"></i>
+                    </div>
+                    <h3>மோசமான கமிட் செய்திகளைத் தடுக்கவும்</h3>
+                    <p>பொருத்தமற்ற கமிட் செய்திகளைத் தடுக்கவும்</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>அனைவருக்கும் விதிகளை செயல்படுத்தவும்</h3>
+                    <p>உங்கள் குழுவில் உள்ள அனைவருக்கும் விதிகளை செயல்படுத்தவும்</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Where Do Hooks Live -->
+        <section class="content-section" id="where-hooks-live">
+            <h2>Hooks எங்கு உள்ளன?</h2>
+            
+            <p>Hooks உங்கள் களஞ்சியத்திற்குள் <code>.git/hooks</code> இல் சேமிக்கப்பட்டுள்ளன.</p>
+            
+            <p>இயல்பாக, <code>.sample</code> என்று முடியும் மாதிரி ஸ்கிரிப்ட்களை நீங்கள் காண்பீர்கள்.</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: கிடைக்கக்கூடிய Hooks-ஐ பட்டியலிடவும்</h3>
+                <pre><code class="command-input">ls .git/hooks</code></pre>
+            </div>
+        </section>
+
+        <!-- How to Enable a Hook -->
+        <section class="content-section" id="enable-hook">
+            <h2>ஒரு Hook-ஐ எவ்வாறு இயக்குவது</h2>
+            
+            <p>ஒரு hook-ஐ இயக்க, <code>.sample</code> நீட்டிப்பை அகற்றி ஸ்கிரிப்டை இயக்கக்கூடியதாக ஆக்கவும்.</p>
+            
+            <p>எடுத்துக்காட்டாக, pre-commit-ஐ இயக்க:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: pre-commit Hook-ஐ இயக்கவும் (Linux/macOS)</h3>
+                <pre><code class="command-input">mv .git/hooks/pre-commit.sample .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit</code></pre>
+            </div>
+            
+            <p>Windows-ல், கோப்பை <code>pre-commit</code> என மறுபெயரிட்டு, அது உங்கள் ஷெல் மூலம் இயக்கப்பட முடியும் என்பதை உறுதிப்படுத்திக் கொள்ளுங்கள் (தேவைப்பட்டால் <code>.bat</code> அல்லது <code>.ps1</code> பயன்படுத்தவும்).</p>
+        </section>
+
+        <!-- Types of Hooks -->
+        <section class="content-section" id="types-of-hooks">
+            <h2>Hooks-ன் வகைகள்</h2>
+            
+            <p>பல வகையான hooks உள்ளன, ஆனால் மிகவும் பொதுவானவை:</p>
+            
+            <ul>
+                <li><strong>pre-commit</strong> - கமிட் செய்வதற்கு முன்</li>
+                <li><strong>commit-msg</strong> - கமிட் செய்தியை சரிபார்க்கும் போது</li>
+                <li><strong>pre-push</strong> - Push செய்வதற்கு முன்</li>
+                <li><strong>pre-receive</strong> - சேவையகத்தில் பெறுவதற்கு முன்</li>
+                <li><strong>post-receive</strong> - சேவையகத்தில் பெற்ற பிறகு</li>
+            </ul>
+        </section>
+
+        <!-- pre-commit Hook -->
+        <section class="content-section" id="pre-commit-hook">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <h2>pre-commit Hook</h2>
+            </div>
+            
+            <p>pre-commit hook நீங்கள் ஒரு கமிட் செய்வதற்கு முன் இயங்கும்.</p>
+            
+            <p>குறியீட்டு பாணியை சரிபார்க்க, சோதனைகளை இயக்க, அல்லது ஏதாவது தவறாக இருந்தால் ஒரு கமிட்டை நிறுத்த இதைப் பயன்படுத்தலாம்.</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: எளிய pre-commit Hook</h3>
+                <pre><code>#!/bin/sh
+# Stop commit if any .js file has "console.log"
+grep -r 'console.log' *.js && {
+  echo "Remove console.log before committing!"
+  exit 1
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- commit-msg Hook -->
+        <section class="content-section" id="commit-msg-hook">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <h2>commit-msg Hook</h2>
+            </div>
+            
+            <p>commit-msg hook கமிட் செய்தியை சரிபார்க்கிறது அல்லது திருத்துகிறது.</p>
+            
+            <p>எடுத்துக்காட்டாக, இது டிக்கெட் எண் இல்லாமல் கமிட்டுகளைத் தடுக்க முடியும்.</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: commit-msg Hook</h3>
+                <pre><code>#!/bin/sh
+# Block commit if message does not contain a ticket number
+if ! grep -qE 'JIRA-[0-9]+' "$1"; then
+  echo "Commit message must have a ticket number (e.g. JIRA-123)"
+  exit 1
+fi</code></pre>
+            </div>
+        </section>
+
+        <!-- pre-push Hook -->
+        <section class="content-section" id="pre-push-hook">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <h2>pre-push Hook</h2>
+            </div>
+            
+            <p>pre-push hook நீங்கள் குறியீட்டை ஒரு தொலைதூரத்திற்கு push செய்வதற்கு முன் இயங்கும்.</p>
+            
+            <p>குறியீட்டைப் பகிர்வதற்கு முன் சோதனைகள் அல்லது சரிபார்ப்புகளை இயக்க இதைப் பயன்படுத்தலாம்.</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: pre-push Hook</h3>
+                <pre><code>#!/bin/sh
+npm test || exit 1</code></pre>
+            </div>
+        </section>
+
+        <!-- Server-side Hooks -->
+        <section class="content-section" id="server-side-hooks">
+            <h2>சேவையக-பக்க Hooks</h2>
+            
+            <p>சில hooks (pre-receive போன்றவை) Git சேவையகத்தில் இயங்கும், உங்கள் கணினியில் அல்ல.</p>
+            
+            <p>களஞ்சியத்திற்கு push செய்யும் அனைவருக்கும் இவை விதிகளை செயல்படுத்த முடியும்.</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: pre-receive Hook</h3>
+                <pre><code>#!/bin/sh
+# Block pushes to main branch
+grep refs/heads/main || exit 1</code></pre>
+            </div>
+        </section>
+
+        <!-- Custom Hooks -->
+        <section class="content-section" id="custom-hooks">
+            <h2>தனிப்பயன் Hooks</h2>
+            
+            <p>எந்தவொரு தனிப்பயன் ஸ்கிரிப்டையும் ஒரு hook ஆக எழுதலாம்.</p>
+            
+            <p>அதை <code>.git/hooks</code> இல் வைத்து இயக்கக்கூடியதாக ஆக்கவும்.</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: தனிப்பயன் Hook</h3>
+                <pre><code>#!/bin/sh
+echo "Hello from my custom hook!"</code></pre>
+            </div>
+        </section>
+
+        <!-- Debugging and Best Practices -->
+        <section class="content-section" id="debugging-best-practices">
+            <h2>பிழைத்திருத்தம் மற்றும் சிறந்த நடைமுறைகள்</h2>
+            
+            <div class="troubleshooting-grid">
+                <div class="issue-card">
+                    <div class="issue-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h4>இயக்கக்கூடிய ஸ்கிரிப்ட்</h4>
+                    <p>உங்கள் hook ஸ்கிரிப்ட் இயக்கக்கூடியது என்பதை உறுதிப்படுத்திக் கொள்ளுங்கள் (<code>chmod +x scriptname</code>)</p>
+                </div>
+                
+                <div class="issue-card">
+                    <div class="issue-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h4>பிழைத்திருத்தம்</h4>
+                    <p>உங்கள் ஸ்கிரிப்ட் என்ன செய்கிறது என்பதைக் காண <code>echo</code> அறிக்கைகளைச் சேர்க்கவும்</p>
+                </div>
+                
+                <div class="issue-card">
+                    <div class="issue-icon">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </div>
+                    <h4>வெளியேறும் குறியீடு</h4>
+                    <p>வெளியேறும் குறியீட்டைச் சரிபார்க்கவும்: <code>exit 0</code> வெற்றி, <code>exit 1</code> தோல்வி</p>
+                </div>
+                
+                <div class="issue-card">
+                    <div class="issue-icon">
+                        <i class="fab fa-windows"></i>
+                    </div>
+                    <h4>Windows ஆதரவு</h4>
+                    <p>Windows-ல், தேவைப்பட்டால் <code>.bat</code> அல்லது <code>.ps1</code> ஸ்கிரிப்ட்களைப் பயன்படுத்தவும்</p>
+                </div>
+            </div>
+            
+            <div class="note-box">
+                <h4><span class="note-icon">💡</span> Jassif Team சிறந்த நடைமுறைகள்</h4>
+                <p><strong>எளிமையாகவும் வேகமாகவும் வைக்கவும்:</strong> hooks எளிமையாகவும் வேகமாகவும் வைக்கவும் - மெதுவான hooks உங்கள் பணிப்பாய்வை மெதுவாக்கும்</p>
+                <p><strong>உங்கள் குழுவுடன் பகிரவும்:</strong> பயனுள்ள hooks-ஐ உங்கள் குழுவுடன் பகிரவும் (ஆனால் நினைவில் கொள்ளுங்கள்: hooks இயல்பாக பதிப்பாக்கப்படவில்லை)</p>
+                <p><strong>தொடங்குபவர்களுக்கு:</strong> முதலில் எளிய hooks-உடன் தொடங்குங்கள், பின்னர் சிக்கலானவற்றுக்குச் செல்லுங்கள்</p>
+            </div>
+        </section>
+
+        <!-- Important Note -->
+        <section class="content-section" id="important-note">
+            <h2>முக்கியமான குறிப்பு</h2>
+            
+            <div class="note-box">
+                <h4><span class="note-icon">📝</span> Jassif Team குறிப்பு</h4>
+                <p>Hooks சோதனைகள் அல்லது குறியீட்டு பகுப்பாய்வு போன்ற சரிபார்ப்புகளை தானியங்கி செய்யவும் குழு தரங்களை செயல்படுத்தவும் சக்திவாய்ந்தவை.</p>
+                <p><strong>கிளையன்-பக்க hooks</strong> உங்கள் கணினியில் இயங்கும். <strong>சேவையக-பக்க hooks</strong> Git சேவையகத்தில் இயங்கும்.</p>
+                <p>Hooks உங்கள் வளர்ச்சி செயல்முறையை மேம்படுத்தவும் பிழைகளை விரைவில் கண்டறியவும் உதவுகின்றன.</p>
+            </div>
+        </section>
+
+        <!-- Quick Reference -->
+        <section class="content-section" id="quick-reference">
+            <h2>விரைவு குறிப்பு</h2>
+            
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                    <h3>Hooks இடம்</h3>
+                    <p>களஞ்சியத்தில் hooks</p>
+                    <div class="code-block small">
+                        <pre><code>.git/hooks/</code></pre>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <h3>Hook-ஐ இயக்கவும்</h3>
+                    <p>மாதிரியிலிருந்து இயக்கவும்</p>
+                    <div class="code-block small">
+                        <pre><code>mv file.sample file</code></pre>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>அனுமதிகள்</h3>
+                    <p>ஸ்கிரிப்டை இயக்கக்கூடியதாக ஆக்கவும்</p>
+                    <div class="code-block small">
+                        <pre><code>chmod +x hookname</code></pre>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>தனிப்பயன் ஸ்கிரிப்ட்</h3>
+                    <p>எந்த ஸ்கிரிப்டும் hook ஆக முடியும்</p>
+                    <div class="code-block small">
+                        <pre><code>#!/bin/sh
+echo "Custom hook"</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="Git CI_CD.html" class="nav-tab prev">
+                <i class="fas fa-arrow-left"></i>
+                <span>முந்தைய</span>
+            </a>
+            <a href="Git Submodules.html" class="nav-tab next">
+                <span>அடுத்தது</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Jassif Team Institution</h3>
+                <p>Leading educational institution providing quality programming education in Tamil.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#what-are-hooks">Git Hooks என்றால் என்ன?</a></li>
+                    <li><a href="#why-use-hooks">ஏன் Hooks பயன்படுத்த வேண்டும்?</a></li>
+                    <li><a href="#types-of-hooks">Hooks வகைகள்</a></li>
+                    <li><a href="#pre-commit-hook">pre-commit Hook</a></li>
+                    <li><a href="#debugging-best-practices">பிழைத்திருத்தம்</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Location & Hours</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Jassif Team Institution. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Additional styles for this page */
+        .benefits-grid, .troubleshooting-grid, .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .benefit-card, .issue-card, .concept-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-left: 4px solid var(--git-color);
+        }
+        
+        .benefit-card:hover, .issue-card:hover, .concept-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon, .issue-icon, .concept-icon {
+            font-size: 2rem;
+            color: var(--git-color);
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card h3, .issue-card h4, .concept-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Step Header Styles */
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-number {
+            background: var(--git-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Note Box */
+        .note-box {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            border-left: 6px solid #ffd700;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            color: white;
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+        }
+        
+        .note-icon {
+            margin-right: 10px;
+        }
+        
+        /* Code Block Styles */
+        .code-block {
+            background: #2d2d2d;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+        
+        .code-block.small {
+            margin: 0.5rem 0;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        
+        .code-block code {
+            color: #f8f8f2;
+            font-family: 'Courier New', monospace;
+        }
+        
+        @media (max-width: 768px) {
+            .benefits-grid, .troubleshooting-grid, .concepts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all content sections for animation
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

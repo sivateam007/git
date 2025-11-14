@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git நிறுவுதல் - Jassif Team Institution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h1>Jassif Team <span>Institution</span></h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Navigation Tabs -->
+    <div class="nav-tabs">
+        <a href="Git and GitHub Introduction.html" class="nav-tab prev">
+            <i class="fas fa-arrow-left"></i>
+            <span>முந்தைய</span>
+        </a>
+        <a href="Git Config.html" class="nav-tab next">
+            <span>அடுத்தது</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Git நிறுவுதல் வழிகாட்டி</h2>
+            <p>வெவ்வேறு இயக்க முறைமைகளில் Git ஐ எவ்வாறு நிறுவுவது என்பதைக் கற்றுக்கொள்ளுங்கள்</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Introduction Section -->
+        <section class="content-section" id="introduction">
+            <h2>Git நிறுவுதல் - அறிமுகம்</h2>
+            <p>Git என்பது குறுக்கு-தளம் (cross-platform) ஆகும், அதாவது இது பல்வேறு இயக்க முறைமைகளில் வேலை செய்யும்.</p>
+            
+            <div class="tip-box">
+                <h4><span class="tip-icon">💡</span> முக்கிய குறிப்பு:</h4>
+                <p>Git ஐ நிறுவுவதற்கு முன், உங்கள் கணினியில் எந்த இயக்க முறைமை உள்ளது என்பதை சரிபார்க்கவும்.</p>
+            </div>
+        </section>
+
+        <!-- Windows Installation -->
+        <section class="content-section" id="windows-install">
+            <h2>Windows-ல் Git நிறுவுதல்</h2>
+            
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Git for Windows ஐ பதிவிறக்கவும்</h3>
+                        <p>அதிகாரப்பூர்வ Git வலைத்தளத்தில் இருந்து Git for Windows ஐ பதிவிறக்கவும்: <a href="https://git-scm.com/download/win" target="_blank">https://git-scm.com/download/win</a></p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>நிறுவி கோப்பை இயக்கவும்</h3>
+                        <p>பதிவிறக்கிய .exe கோப்பை திறந்து, நிறுவல் செயல்முறையை தொடரவும்</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>கட்டமைப்பு விருப்பங்கள்</h3>
+                        <p>இயல்புநிலை அமைப்புகளை தேர்ந்தெடுப்பது நல்லது, குறிப்பாக தொடக்கநிலை பயனர்களுக்கு</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>நிறுவல் முடிந்தது</h3>
+                        <p>நிறுவல் முடிந்த பிறகு, Command Prompt அல்லது Git Bash-ஐ திறக்கவும்</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>சரிபார்ப்பு</h3>
+                        <p>கீழ்கண்ட கட்டளையை இயக்கி Git நிறுவலை சரிபார்க்கவும்:</p>
+                        <div class="code-example">
+                            <pre><code class="command-input">git --version</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <h4>குறிப்பு:</h4>
+                <p>Windows-ல் Git Bash உங்களுக்கு Unix-style command line சூழலை வழங்கும், இது Git கட்டளைகளை இயக்க உதவும்.</p>
+            </div>
+        </section>
+
+        <!-- macOS Installation -->
+        <section class="content-section" id="macos-install">
+            <h2>macOS-ல் Git நிறுவுதல்</h2>
+            
+            <h3>முறை 1: Homebrew-ஐ பயன்படுத்தி</h3>
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Homebrew-ஐ நிறுவவும்</h3>
+                        <p>Terminal-ஐ திறந்து கீழ்கண்ட கட்டளையை இயக்கவும்:</p>
+                        <div class="code-example">
+                            <pre><code class="command-input">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Git-ஐ நிறுவவும்</h3>
+                        <div class="code-example">
+                            <pre><code class="command-input">brew install git</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>முறை 2: Xcode Command Line Tools</h3>
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Terminal-ஐ திறக்கவும்</h3>
+                        <p>Applications → Utilities → Terminal</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Git கட்டளையை இயக்கவும்</h3>
+                        <div class="code-example">
+                            <pre><code class="command-input">git --version</code></pre>
+                        </div>
+                        <p>இது தானாகவே Xcode Command Line Tools-ஐ நிறுவும்</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Linux Installation -->
+        <section class="content-section" id="linux-install">
+            <h2>Linux-ல் Git நிறுவுதல்</h2>
+            
+            <h3>Ubuntu/Debian:</h3>
+            <div class="code-example">
+                <pre><code class="command-input">sudo apt update
+sudo apt install git</code></pre>
+            </div>
+
+            <h3>CentOS/Fedora/RHEL:</h3>
+            <div class="code-example">
+                <pre><code class="command-input">sudo yum install git</code></pre>
+                <p>அல்லது (புதிய பதிப்புகளில்):</p>
+                <pre><code class="command-input">sudo dnf install git</code></pre>
+            </div>
+
+            <h3>Arch Linux:</h3>
+            <div class="code-example">
+                <pre><code class="command-input">sudo pacman -S git</code></pre>
+            </div>
+        </section>
+
+        <!-- Verification Section -->
+        <section class="content-section" id="verification">
+            <h2>நிறுவல் சரிபார்ப்பு</h2>
+            
+            <p>Git வெற்றிகரமாக நிறுவப்பட்டதா என சரிபார்க்க, terminal/command prompt-ஐ திறந்து கீழ்கண்ட கட்டளையை இயக்கவும்:</p>
+            
+            <div class="code-example">
+                <pre><code class="command-input">git --version</code></pre>
+            </div>
+            
+            <p>எதிர்பார்க்கப்படும் வெளியீடு (பதிப்பு எண் மாறுபடலாம்):</p>
+            <div class="code-example">
+                <pre><code class="command-output">git version 2.39.1</code></pre>
+            </div>
+
+            <div class="tip-box">
+                <h4><span class="tip-icon">✅</span> வெற்றி!</h4>
+                <p>பதிப்பு எண் காட்டப்பட்டால், Git வெற்றிகரமாக நிறுவப்பட்டுள்ளது!</p>
+            </div>
+        </section>
+
+        <!-- Initial Setup -->
+        <section class="content-section" id="initial-setup">
+            <h2>ஆரம்ப Git அமைப்பு</h2>
+            
+            <p>Git-ஐ நிறுவிய பிறகு, உங்கள் பெயர் மற்றும் மின்னஞ்சலை கட்டமைக்க வேண்டும்:</p>
+            
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>பயனர் பெயர் அமைப்பு</h3>
+                        <div class="code-example">
+                            <pre><code class="command-input">git config --global user.name "உங்கள் பெயர்"</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>மின்னஞ்சல் அமைப்பு</h3>
+                        <div class="code-example">
+                            <pre><code class="command-input">git config --global user.email "your.email@example.com"</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>சரிபார்ப்பு</h3>
+                        <p>கட்டமைப்பு அமைப்புகளை சரிபார்க்க:</p>
+                        <div class="code-example">
+                            <pre><code class="command-input">git config --list</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <h4>குறிப்பு:</h4>
+                <p>--global flag உங்கள் கணினியில் உள்ள அனைத்து Git களஞ்சியங்களுக்கும் இந்த அமைப்புகளைப் பயன்படுத்தும். ஒரு குறிப்பிட்ட களஞ்சியத்திற்கு மட்டும் வேறுபட்ட அமைப்புகள் வைக்க --global-ஐ நீக்கிவிட்டு கட்டளையை இயக்கவும்.</p>
+            </div>
+        </section>
+
+        <!-- Common Issues -->
+        <section class="content-section" id="common-issues">
+            <h2>பொதுவான நிறுவல் சிக்கல்கள்</h2>
+            
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>'git' அங்கீகரிக்கப்படவில்லை</h3>
+                    <p>Windows: கணினி PATH-ல் Git சேர்க்கப்படவில்லை. நிறுவலை மீண்டும் இயக்கி "Add to PATH" விருப்பத்தை தேர்வு செய்யவும்.</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>அனுமதி மறுக்கப்பட்டது</h3>
+                    <p>Linux/macOS: sudo-ஐ பயன்படுத்தவும் அல்லது நிர்வாகி அனுமதிகளுடன் terminal-ஐ திறக்கவும்.</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>பழைய பதிப்பு</h3>
+                    <p>கணினி தொகுப்பு மேலாளர்கள் சில நேரங்களில் பழைய Git பதிப்புகளை வழங்கும். அதிகாரப்பூர்வ வலைத்தளத்தில் இருந்து நேரடியாக பதிவிறக்கவும்.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Steps -->
+        <section class="content-section" id="next-steps">
+            <h2>அடுத்து என்ன?</h2>
+            
+            <p>Git வெற்றிகரமாக நிறுவப்பட்ட பிறகு, நீங்கள்:</p>
+            <ul>
+                <li>உங்கள் முதல் Git களஞ்சியத்தை உருவாக்கலாம்</li>
+                <li>கோப்புகளை stage மற்றும் commit செய்யலாம்</li>
+                <li>GitHub-ல் கணக்கு உருவாக்கலாம்</li>
+                <li>தொலை களஞ்சியங்களுடன் வேலை செய்யலாம்</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4><span class="tip-icon">🚀</span> தயாரா?</h4>
+                <p>Git நிறுவப்பட்டுவிட்டது! அடுத்த பாடத்தில் Git அடிப்படை கட்டளைகளை கற்றுக்கொள்ளத் தயாராகுங்கள்.</p>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="Git and GitHub Introduction.html" class="nav-tab prev">
+                <i class="fas fa-arrow-left"></i>
+                <span>முந்தைய</span>
+            </a>
+            <a href="Git Config.html" class="nav-tab next">
+                <span>அடுத்தது</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Jassif Team Institution</h3>
+                <p>Leading educational institution providing quality programming education in Tamil.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#introduction">அறிமுகம்</a></li>
+                    <li><a href="#windows-install">Windows நிறுவல்</a></li>
+                    <li><a href="#macos-install">macOS நிறுவல்</a></li>
+                    <li><a href="#linux-install">Linux நிறுவல்</a></li>
+                    <li><a href="#verification">சரிபார்ப்பு</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Location & Hours</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Jassif Team Institution. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Additional styles for this page */
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .concept-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-left: 4px solid var(--git-color);
+        }
+        
+        .concept-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .concept-icon {
+            font-size: 2rem;
+            color: var(--git-color);
+            margin-bottom: 1rem;
+        }
+        
+        .concept-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .workflow-steps {
+            margin: 2rem 0;
+        }
+        
+        .workflow-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid var(--git-color);
+        }
+        
+        .step-number {
+            background: var(--git-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .code-example {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            overflow-x: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        .command-input {
+            color: #8be9fd;
+        }
+        
+        .command-output {
+            color: #50fa7b;
+        }
+        
+        .note-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .note-box h4 {
+            color: #1565c0;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .concepts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .workflow-step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all content sections for animation
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Copy code functionality
+        document.querySelectorAll('.code-example').forEach(codeBlock => {
+            const copyButton = document.createElement('button');
+            copyButton.className = 'copy-btn';
+            copyButton.innerHTML = '<i class="far fa-copy"></i> நகலெடு';
+            copyButton.style.cssText = `
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: rgba(255,255,255,0.1);
+                border: 1px solid rgba(255,255,255,0.3);
+                color: white;
+                padding: 5px 10px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 0.8rem;
+                transition: all 0.3s;
+            `;
+            
+            copyButton.addEventListener('mouseenter', () => {
+                copyButton.style.background = 'rgba(255,255,255,0.2)';
+            });
+            
+            copyButton.addEventListener('mouseleave', () => {
+                copyButton.style.background = 'rgba(255,255,255,0.1)';
+            });
+            
+            copyButton.addEventListener('click', () => {
+                const code = codeBlock.querySelector('code').textContent;
+                navigator.clipboard.writeText(code).then(() => {
+                    copyButton.innerHTML = '<i class="fas fa-check"></i> நகலெடுக்கப்பட்டது!';
+                    setTimeout(() => {
+                        copyButton.innerHTML = '<i class="far fa-copy"></i> நகலெடு';
+                    }, 2000);
+                });
+            });
+            
+            codeBlock.style.position = 'relative';
+            codeBlock.appendChild(copyButton);
+        });
+    </script>
+</body>
+</html>

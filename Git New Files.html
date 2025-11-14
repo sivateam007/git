@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git New Files - Jassif Team Institution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h1>Jassif Team <span>Institution</span></h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Navigation Tabs -->
+    <div class="nav-tabs">
+        <a href="Git Getting Started.html" class="nav-tab prev">
+            <i class="fas fa-arrow-left"></i>
+            <span>முந்தைய</span>
+        </a>
+        <a href="Git Staging Environment.html" class="nav-tab next">
+            <span>அடுத்தது</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Git New Files</h2>
+            <p>Learn how to work with new files in your Git repository</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- What is New File Section -->
+        <section class="content-section" id="what-is-new-file">
+            <h2>புதிய கோப்பு என்றால் என்ன?</h2>
+            
+            <p>ஒரு புதிய கோப்பு என்பது நீங்கள் உருவாக்கிய அல்லது உங்கள் திட்ட கோப்புறையில் நகலெடுத்த ஒரு கோப்பு, ஆனால் Git-க்கு பார்க்கச் சொல்லாதது.</p>
+            
+            <div class="tip-box">
+                <h4><span class="tip-icon">🔑</span> தெரிந்து கொள்ள வேண்டிய முக்கிய விஷயங்கள்:</h4>
+                <ul>
+                    <li>ஒரு புதிய கோப்பை உருவாக்கவும் (உரை ஆசிரியருடன்)</li>
+                    <li>ls - கோப்புறையில் உள்ள கோப்புகளை பட்டியலிடுங்கள்</li>
+                    <li>git status - எந்த கோப்புகள் கண்காணிக்கப்படுகின்றன என சரிபார்க்கவும்</li>
+                    <li>கண்காணிக்கப்படாத மற்றும் கண்காணிக்கப்பட்ட கோப்புகளைப் புரிந்து கொள்ளுங்கள்</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Create New File Section -->
+        <section class="content-section" id="create-new-file">
+            <h2>புதிய கோப்பை உருவாக்கவும்</h2>
+            
+            <p>உங்கள் புதிய Git களஞ்சியம் காலியாக உள்ளது.</p>
+            
+            <p>உங்களுக்கு பிடித்த உரை ஆசிரியரைப் பயன்படுத்தி ஒரு கோப்பைச் சேர்த்து, அதை உங்கள் திட்ட கோப்புறையில் சேமிக்கவும்.</p>
+            
+            <div class="note-box">
+                <h4>குறிப்பு:</h4>
+                <p>ஒரு கோப்பை உருவாக்க உதவி தேவைப்பட்டால், எங்கள் HTML Editors பக்கத்தைப் பார்க்கவும்.</p>
+            </div>
+
+            <p>இந்த எடுத்துக்காட்டுக்கு, நாம் ஒரு எளிய HTML கோப்பைப் பயன்படுத்துவோம்:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: எளிய HTML கோப்பு</h3>
+                <pre><code class="command-input">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Hello World!&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Hello world!&lt;/h1&gt;
+&lt;p&gt;This is the first file in my new Git Repo.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <p>இதை index.html என்று உங்கள் திட்ட கோப்புறையில் சேமிக்கவும்.</p>
+        </section>
+
+        <!-- List Files Section -->
+        <section class="content-section" id="list-files">
+            <h2>கோப்பகத்தில் கோப்புகளை பட்டியலிடுங்கள்</h2>
+            
+            <p>உங்கள் திட்ட கோப்புறையில் எந்த கோப்புகள் உள்ளன என்பதைப் பார்க்க, ls கட்டளையைப் பயன்படுத்தவும்:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு</h3>
+                <pre><code class="command-input">ls</code></pre>
+                <pre><code class="command-output">index.html</code></pre>
+            </div>
+
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-list"></i>
+                    </div>
+                    <h3>ls</h3>
+                    <p>தற்போதைய கோப்புறையில் உள்ள அனைத்து கோப்புகளையும் பட்டியலிடுகிறது</p>
+                </div>
+            </div>
+
+            <p>வெளியீட்டில் index.html ஐப் பார்க்க வேண்டும்.</p>
+        </section>
+
+        <!-- Check Status Section -->
+        <section class="content-section" id="check-status">
+            <h2>git status உடன் கோப்பு நிலையை சரிபார்க்கவும்</h2>
+            
+            <p>இப்போது Git உங்கள் புதிய கோப்பைக் கண்காணிக்கிறதா என சரிபார்க்கவும்:</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு</h3>
+                <pre><code class="command-input">git status</code></pre>
+                <pre><code class="command-output">On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add ..." to include in what will be committed)
+    index.html
+
+nothing added to commit but untracked files present (use "git add" to track)</code></pre>
+            </div>
+
+            <p>Git index.html ஐப் பார்க்கிறது, ஆனால் அது கண்காணிக்கப்படவில்லை (இன்னும் களஞ்சியத்தில் சேர்க்கப்படவில்லை).</p>
+        </section>
+
+        <!-- Untracked Files Section -->
+        <section class="content-section" id="untracked-files">
+            <h2>கண்காணிக்கப்படாத கோப்பு என்றால் என்ன?</h2>
+            
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-eye-slash"></i>
+                    </div>
+                    <h3>கண்காணிக்கப்படாத கோப்பு</h3>
+                    <p>Git இன்னும் கண்காணிக்காத உங்கள் திட்ட கோப்புறையில் உள்ள எந்த கோப்பும்</p>
+                    <p>இவை நீங்கள் உருவாக்கிய அல்லது கோப்புறையில் நகலெடுத்த கோப்புகள், ஆனால் Git-க்கு பார்க்கச் சொல்லாதது</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>கண்காணிக்கப்பட்ட கோப்பு</h3>
+                    <p>Git மாற்றங்களுக்காக பார்க்கும் ஒரு கோப்பு</p>
+                    <p>ஒரு கோப்பைக் கண்காணிக்க, நீங்கள் அதை stage பகுதியில் சேர்க்க வேண்டும் (அடுத்த அத்தியாயத்தில் உள்ளடக்கப்பட்டது)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- File Status Workflow -->
+        <section class="content-section" id="file-workflow">
+            <h2>கோப்பு நிலை வேலைப்பாய்வு</h2>
+            
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>கோப்பை உருவாக்கவும்</h3>
+                        <p>உங்கள் திட்ட கோப்புறையில் ஒரு புதிய கோப்பை உருவாக்கவும்</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>கோப்புகளைப் பட்டியலிடுங்கள்</h3>
+                        <p>ls கட்டளையைப் பயன்படுத்தி கோப்புகள் உள்ளனவா என சரிபார்க்கவும்</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Git நிலையைச் சரிபார்க்கவும்</h3>
+                        <p>git status உடன் கோப்பு கண்காணிக்கப்படுகிறதா என சரிபார்க்கவும்</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>கண்காணிக்கப்படாத கோப்பைக் கவனிக்கவும்</h3>
+                        <p>கோப்பு "Untracked files" பிரிவில் தோன்றும்</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Troubleshooting Section -->
+        <section class="content-section" id="troubleshooting">
+            <h2>சிக்கல் தீர்வு</h2>
+            
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>ls உடன் கோப்பு காட்டப்படவில்லை</h3>
+                    <p><strong>தீர்வு:</strong> நீங்கள் அதை சரியான கோப்புறையில் சேமித்துள்ளீர்களா என்பதை சரிபார்க்கவும்.</p>
+                    <p>உங்கள் தற்போதைய கோப்பகத்தைச் சரிபார்க்க pwd ஐப் பயன்படுத்தவும்.</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>git status-ல் கோப்பு பட்டியலிடப்படவில்லை</h3>
+                    <p><strong>தீர்வு:</strong> நீங்கள் சரியான கோப்புறையில் இருக்கிறீர்களா மற்றும் கோப்பைச் சேமித்துள்ளீர்களா என்பதை சரிபார்க்கவும்.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="content-section" id="summary">
+            <h2>சுருக்கம்</h2>
+            
+            <div class="tip-box">
+                <h4><span class="tip-icon">📝</span> நீங்கள் இப்போது கற்றுக்கொண்டவை:</h4>
+                <ul>
+                    <li>புதிய கோப்புகளை உருவாக்குவது எப்படி</li>
+                    <li>ls கட்டளையைப் பயன்படுத்தி கோப்புகளைப் பார்ப்பது எப்படி</li>
+                    <li>git status உடன் Git நிலையைச் சரிபார்க்கும் முறை</li>
+                    <li>கண்காணிக்கப்படாத மற்றும் கண்காணிக்கப்பட்ட கோப்புகளுக்கு இடையே உள்ள வித்தியாசம்</li>
+                </ul>
+            </div>
+
+            <div class="note-box">
+                <h4>அடுத்து என்ன?</h4>
+                <p>இப்போது உங்களுக்கு ஒரு கண்காணிக்கப்படாத கோப்பு உள்ளது! அடுத்த பாடத்தில், இந்த கோப்பை Git-க்கு கண்காணிக்க stage பகுதியில் எவ்வாறு சேர்க்க வேண்டும் என்பதைக் கற்றுக்கொள்வோம்.</p>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="Git Getting Started.html" class="nav-tab prev">
+                <i class="fas fa-arrow-left"></i>
+                <span>முந்தைய</span>
+            </a>
+            <a href="Git Staging Environment.html" class="nav-tab next">
+                <span>அடுத்தது</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Jassif Team Institution</h3>
+                <p>Leading educational institution providing quality programming education in Tamil.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#what-is-new-file">புதிய கோப்பு என்றால் என்ன</a></li>
+                    <li><a href="#create-new-file">கோப்பு உருவாக்குதல்</a></li>
+                    <li><a href="#list-files">கோப்புகளை பட்டியலிடுதல்</a></li>
+                    <li><a href="#check-status">நிலை சரிபார்த்தல்</a></li>
+                    <li><a href="#untracked-files">கண்காணிக்கப்படாத கோப்புகள்</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Location & Hours</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Jassif Team Institution. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Additional styles for this page */
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .concept-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-left: 4px solid var(--git-color);
+        }
+        
+        .concept-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .concept-icon {
+            font-size: 2rem;
+            color: var(--git-color);
+            margin-bottom: 1rem;
+        }
+        
+        .concept-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .workflow-steps {
+            margin: 2rem 0;
+        }
+        
+        .workflow-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid var(--git-color);
+        }
+        
+        .step-number {
+            background: var(--git-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .code-example {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            overflow-x: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        .command-input {
+            color: #8be9fd;
+        }
+        
+        .command-output {
+            color: #50fa7b;
+        }
+        
+        .note-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .note-box h4 {
+            color: #1565c0;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .concepts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .workflow-step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all content sections for animation
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Copy code functionality
+        document.querySelectorAll('.code-example').forEach(codeBlock => {
+            const copyButton = document.createElement('button');
+            copyButton.className = 'copy-btn';
+            copyButton.innerHTML = '<i class="far fa-copy"></i> நகலெடு';
+            copyButton.style.cssText = `
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: rgba(255,255,255,0.1);
+                border: 1px solid rgba(255,255,255,0.3);
+                color: white;
+                padding: 5px 10px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 0.8rem;
+                transition: all 0.3s;
+            `;
+            
+            copyButton.addEventListener('mouseenter', () => {
+                copyButton.style.background = 'rgba(255,255,255,0.2)';
+            });
+            
+            copyButton.addEventListener('mouseleave', () => {
+                copyButton.style.background = 'rgba(255,255,255,0.1)';
+            });
+            
+            copyButton.addEventListener('click', () => {
+                const code = codeBlock.querySelector('code').textContent;
+                navigator.clipboard.writeText(code).then(() => {
+                    copyButton.innerHTML = '<i class="fas fa-check"></i> நகலெடுக்கப்பட்டது!';
+                    setTimeout(() => {
+                        copyButton.innerHTML = '<i class="far fa-copy"></i> நகலெடு';
+                    }, 2000);
+                });
+            });
+            
+            codeBlock.style.position = 'relative';
+            codeBlock.appendChild(copyButton);
+        });
+    </script>
+</body>
+</html>

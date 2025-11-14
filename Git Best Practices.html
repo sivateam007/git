@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Best Practices - Jassif Team Institution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h1>Jassif Team <span>Institution</span></h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Navigation Tabs -->
+    <div class="nav-tabs">
+        <a href="Git Workflow.html" class="nav-tab prev">
+            <i class="fas fa-arrow-left"></i>
+            <span>முந்தைய</span>
+        </a>
+        <a href="Git Glossary.html" class="nav-tab next">
+            <span>அடுத்தது</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Git Best Practices</h2>
+            <p>திறம்பட்ட Git பயன்பாட்டிற்கான சிறந்த நடைமுறைகளைக் கற்றுக்கொள்ளுங்கள்</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Summary Section -->
+        <section class="content-section" id="summary">
+            <h2>Summary of Git Best Practices</h2>
+            
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-save"></i>
+                    </div>
+                    <h3>Commit Often</h3>
+                    <p>அடிக்கடி commit செய்யவும்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-comment-alt"></i>
+                    </div>
+                    <h3>Write Clear Commit Messages</h3>
+                    <p>தெளிவான commit செய்திகளை எழுதவும்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>Use Branches</h3>
+                    <p>கிளைகளைப் பயன்படுத்தவும்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Pull Before You Push</h3>
+                    <p>Push செய்வதற்கு முன் pull செய்யவும்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Review Changes Before Committing</h3>
+                    <p>Commit செய்வதற்கு முன் மாற்றங்களை மதிப்பாய்வு செய்யவும்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-compress"></i>
+                    </div>
+                    <h3>Keep Repositories Small</h3>
+                    <p>களஞ்சியங்களை சிறியதாக வைத்திருங்கள்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-eye-slash"></i>
+                    </div>
+                    <h3>Use .gitignore</h3>
+                    <p>.gitignore-ஐப் பயன்படுத்தவும்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3>Tag Releases</h3>
+                    <p>வெளியீடுகளை tag செய்யவும்</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Commit Often Section -->
+        <section class="content-section" id="commit-often">
+            <h2>Commit Often</h2>
+            
+            <p>உங்கள் முன்னேற்றத்தைப் பதிவு செய்ய சிறிய, அடிக்கடி commits செய்யவும்.</p>
+            
+            <p>இது மாற்றங்களைக் கண்காணிக்கவும் பிழைகளைக் கண்டறியவும் எளிதாக்குகிறது.</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு</h3>
+                <pre><code class="command-input">git add .
+git commit -m "Add user authentication logic"</code></pre>
+            </div>
+        </section>
+
+        <!-- Write Clear Commit Messages Section -->
+        <section class="content-section" id="clear-messages">
+            <h2>Write Clear Commit Messages</h2>
+            
+            <p>என்ன மாற்றம் செய்யப்பட்டது என்பதை மட்டும் அல்ல, ஏன் ஒரு மாற்றம் செய்யப்பட்டது என்பதை விளக்கும் விளக்கமான செய்திகளைப் பயன்படுத்தவும்.</p>
+            
+            <p>நல்ல commit செய்திகள் உங்களுக்கும் உங்கள் குழுவிற்கும் திட்டத்தின் வரலாற்றைப் புரிந்துகொள்ள உதவுகின்றன.</p>
+            
+            <div class="tip-box">
+                <h4><span class="tip-icon">💡</span> சிறந்த commit செய்தி எழுதும் உதவிக்குறிப்புகள்:</h4>
+                <ul>
+                    <li><strong>குறிப்பிட்டதாக இருங்கள்:</strong> என்ன மற்றும் ஏன் என்று சொல்லுங்கள், "Update" அல்லது "Fix" என்று மட்டும் சொல்லாதீர்கள்.</li>
+                    <li><strong>கட்டளை முறையைப் பயன்படுத்துங்கள்:</strong> எடுத்துக்காட்டாக, "Added login validation" என்று சொல்வதற்குப் பதிலாக "Add login validation" என்று சொல்லுங்கள்.</li>
+                </ul>
+            </div>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு</h3>
+                <pre><code class="command-input">git commit -m "Fix bug in user login validation"</code></pre>
+            </div>
+        </section>
+
+        <!-- Use Branches Section -->
+        <section class="content-section" id="use-branches">
+            <h2>Use Branches</h2>
+            
+            <p>உங்கள் முக்கிய கிளையை நிலையானதாக வைத்திருக்க அம்சங்கள், திருத்தங்கள் மற்றும் சோதனைகளுக்காக கிளைகளை உருவாக்கவும்.</p>
+            
+            <p>இந்த வழியில், முக்கிய குறியீட்டை பாதிக்காமல் புதிய யோசனைகளில் வேலை செய்யலாம்.</p>
+            
+            <div class="tip-box">
+                <h4><span class="tip-icon">❓</span> ஏன் கிளைகளைப் பயன்படுத்த வேண்டும்?</h4>
+                <ul>
+                    <li>கிளைகள் நீங்கள் சுயாதீனமாக சோதிக்கவும் உருவாக்கவும் அனுமதிக்கின்றன, மேலும் கூட்டுழைப்பை பாதுகாப்பானதாக ஆக்குகின்றன.</li>
+                    <li><strong>கிளைகளை தெளிவாக பெயரிடுங்கள்:</strong> எடுத்துக்காட்டாக, feature/login-form அல்லது bugfix/user-auth.</li>
+                </ul>
+            </div>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு</h3>
+                <pre><code class="command-input">git checkout -b feature/login-form</code></pre>
+            </div>
+        </section>
+
+        <!-- Pull Before You Push Section -->
+        <section class="content-section" id="pull-before-push">
+            <h2>Pull Before You Push</h2>
+            
+            <p>எப்போதும் push செய்வதற்கு முன் git pull செய்யவும்.</p>
+            
+            <p>இது மற்றவர்களின் மாற்றங்களுடன் உங்கள் உள்ளூர் கிளையைப் புதுப்பிக்கிறது, மோதல்களைத் தவிர்க்க உதவுகிறது மற்றும் உங்கள் push வெற்றி பெறுவதை உறுதிப்படுத்துகிறது.</p>
+            
+            <div class="warning-box">
+                <h4>⚠️ ஏன் pull செய்ய வேண்டும்?</h4>
+                <p>உங்கள் கடைசி pull-இலிருந்து வேறொருவர் மாற்றங்களை push செய்திருந்தால், உங்கள் push நிராகரிக்கப்படலாம் அல்லது மோதல்களை ஏற்படுத்தலாம்.</p>
+                <p>முதலில் pulling செய்வது எந்த சிக்கல்களையும் உள்ளூரில் சரிசெய்ய உங்களை அனுமதிக்கிறது.</p>
+            </div>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு</h3>
+                <pre><code class="command-input">git pull origin main
+git push origin main</code></pre>
+            </div>
+        </section>
+
+        <!-- Review Changes Section -->
+        <section class="content-section" id="review-changes">
+            <h2>Review Changes Before Committing</h2>
+            
+            <p>நீங்கள் commit செய்வதற்கு முன் உங்கள் மாற்றங்களை மதிப்பாய்வு செய்ய git status மற்றும் git diff பயன்படுத்தவும்.</p>
+            
+            <p>இது தவறுகளை ஆரம்பத்திலேயே பிடிக்க உதவுகிறது.</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு</h3>
+                <pre><code class="command-input">git status
+git diff</code></pre>
+            </div>
+        </section>
+
+        <!-- Keep Repositories Small Section -->
+        <section class="content-section" id="small-repos">
+            <h2>Keep Repositories Small</h2>
+            
+            <p>பெரிய கோப்புகள் அல்லது தேவையற்ற சார்புகளைச் சேர்க்க தவிர்க்கவும்.</p>
+            
+            <p>இது உங்கள் களஞ்சியத்தை வேகமாகவும் குளோன் செய்ய எளிதாகவும் வைக்கிறது.</p>
+            
+            <div class="tip-box">
+                <h4><span class="tip-icon">💡</span> உதவிக்குறிப்பு:</h4>
+                <p>பெரிய கோப்புகளுக்கு (வீடியோக்கள் அல்லது தரவுத்தொகுப்புகள் போன்றவை), அவற்றை நேரடியாக உங்கள் repo-க்கு சேர்ப்பதற்குப் பதிலாக Git LFS (Large File Storage) பயன்படுத்தவும்.</p>
+            </div>
+        </section>
+
+        <!-- Use .gitignore Section -->
+        <section class="content-section" id="use-gitignore">
+            <h2>Use .gitignore</h2>
+            
+            <p>கண்காணிக்கப்படக்கூடாத கோப்புகளை (build artifacts, log files, அல்லது secrets போன்றவை) ஒரு .gitignore கோப்பில் சேர்ப்பதன் மூலம் விலக்கவும்.</p>
+            
+            <div class="note-box">
+                <h4>குறிப்பு:</h4>
+                <p>.gitignore புதிய கோப்புகள் கண்காணிக்கப்படுவதைத் தடுக்கும் மட்டுமே.</p>
+                <p>ஏற்கனவே Git-ஆல் கண்காணிக்கப்படும் கோப்புகள், நீங்கள் git rm --cached &lt;file&gt; உடன் அவற்றை அகற்றும் வரை களஞ்சியத்தில் இருக்கும்.</p>
+            </div>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு: .gitignore</h3>
+                <pre><code class="command-output"># .gitignore
+node_modules/
+*.log
+.env</code></pre>
+            </div>
+        </section>
+
+        <!-- Tag Releases Section -->
+        <section class="content-section" id="tag-releases">
+            <h2>Tag Releases</h2>
+            
+            <p>வெளியீட்டு புள்ளிகளைக் குறிக்க tags பயன்படுத்தவும் (v1.0 போன்றவை) இதனால் முக்கியமான பதிப்புகளை எளிதாகக் கண்டறிந்து குறிப்பிடலாம்.</p>
+            
+            <p>இது உங்கள் திட்டத்தின் வரலாற்றைக் கண்காணிக்க உதவுகிறது மற்றும் தேவைப்பட்டால் முந்தைய பதிப்புகளுக்கு திரும்பிச் செல்ல எளிதாக்குகிறது.</p>
+            
+            <div class="code-example">
+                <h3>எடுத்துக்காட்டு</h3>
+                <pre><code class="command-input">git tag v1.0
+git push origin v1.0</code></pre>
+            </div>
+        </section>
+
+        <!-- Final Note Section -->
+        <section class="content-section" id="final-note">
+            <div class="tip-box">
+                <h4><span class="tip-icon">🎯</span> இறுதி குறிப்பு:</h4>
+                <p>நல்ல Git பழக்கங்கள் உங்கள் குழுவிற்கும் (மற்றும் உங்கள் எதிர்கால சுயத்திற்கும்) உங்கள் வேலையைப் புரிந்துகொள்ளவும் அதன் அடிப்படையில் கட்டமைக்கவும் எளிதாக்குகின்றன.</p>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="Git Workflow.html" class="nav-tab prev">
+                <i class="fas fa-arrow-left"></i>
+                <span>முந்தைய</span>
+            </a>
+            <a href="Git Glossary.html" class="nav-tab next">
+                <span>அடுத்தது</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Jassif Team Institution</h3>
+                <p>Leading educational institution providing quality programming education in Tamil.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#commit-often">Commit Often</a></li>
+                    <li><a href="#clear-messages">Clear Commit Messages</a></li>
+                    <li><a href="#use-branches">Use Branches</a></li>
+                    <li><a href="#pull-before-push">Pull Before Push</a></li>
+                    <li><a href="#tag-releases">Tag Releases</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Location & Hours</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Jassif Team Institution. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Additional styles for this page */
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .concept-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-left: 4px solid var(--git-color);
+        }
+        
+        .concept-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .concept-icon {
+            font-size: 2rem;
+            color: var(--git-color);
+            margin-bottom: 1rem;
+        }
+        
+        .concept-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .code-example {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            overflow-x: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        .command-input {
+            color: #8be9fd;
+        }
+        
+        .command-output {
+            color: #50fa7b;
+        }
+        
+        .note-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .note-box h4 {
+            color: #1565c0;
+            margin-bottom: 0.5rem;
+        }
+        
+        .warning-box {
+            background-color: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .warning-box h4 {
+            color: #c62828;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .concepts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all content sections for animation
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Copy code functionality
+        document.querySelectorAll('.code-example').forEach(codeBlock => {
+            const copyButton = document.createElement('button');
+            copyButton.className = 'copy-btn';
+            copyButton.innerHTML = '<i class="far fa-copy"></i> நகலெடு';
+            copyButton.style.cssText = `
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: rgba(255,255,255,0.1);
+                border: 1px solid rgba(255,255,255,0.3);
+                color: white;
+                padding: 5px 10px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 0.8rem;
+                transition: all 0.3s;
+            `;
+            
+            copyButton.addEventListener('mouseenter', () => {
+                copyButton.style.background = 'rgba(255,255,255,0.2)';
+            });
+            
+            copyButton.addEventListener('mouseleave', () => {
+                copyButton.style.background = 'rgba(255,255,255,0.1)';
+            });
+            
+            copyButton.addEventListener('click', () => {
+                const code = codeBlock.querySelector('code').textContent;
+                navigator.clipboard.writeText(code).then(() => {
+                    copyButton.innerHTML = '<i class="fas fa-check"></i> நகலெடுக்கப்பட்டது!';
+                    setTimeout(() => {
+                        copyButton.innerHTML = '<i class="far fa-copy"></i> நகலெடு';
+                    }, 2000);
+                });
+            });
+            
+            codeBlock.style.position = 'relative';
+            codeBlock.appendChild(copyButton);
+        });
+    </script>
+</body>
+</html>

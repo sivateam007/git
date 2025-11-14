@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub இருந்து குளோன் - Jassif Team Institution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h1>Jassif Team <span>Institution</span></h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Navigation Tabs -->
+    <div class="nav-tabs">
+        <a href="Git GUI Clients.html" class="nav-tab prev">
+            <i class="fas fa-arrow-left"></i>
+            <span>முந்தைய</span>
+        </a>
+        <a href="Git GitHub Send Pull Request.html" class="nav-tab next">
+            <span>அடுத்தது</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>GitHub இருந்து குளோன்</h2>
+            <p>உங்கள் உள்ளூர் கணினிக்கு ஃபோர்க் செய்யப்பட்ட களஞ்சியத்தைப் பதிவிறக்கவும்</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Clone Fork from GitHub -->
+        <section class="content-section" id="clone-fork">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <h2>GitHub இருந்து ஒரு ஃபோர்க்-ஐ குளோன் செய்யவும்</h2>
+            </div>
+            
+            <p>இப்போது எங்களிடம் எங்கள் சொந்த ஃபோர்க் உள்ளது, ஆனால் GitHub-ல் மட்டுமே. அதில் தொடர்ந்து வேலை செய்ய, எங்கள் உள்ளூர் Git-இல் ஒரு குளோனையும் நாங்கள் விரும்புகிறோம்.</p>
+            
+            <p>ஒரு குளோன் என்பது ஒரு களஞ்சியத்தின் முழு நகலாகும், இதில் அனைத்து பதிவுகள் மற்றும் கோப்புகளின் பதிப்புகளும் அடங்கும்.</p>
+            
+            <p>அசல் களஞ்சியத்திற்குத் திரும்பிச் சென்று, குளோன் செய்வதற்கான URL-ஐப் பெற பச்சை "Code" பொத்தானைக் கிளிக் செய்யவும்:</p>
+            
+            <div class="screenshot-container">
+                <img src="github23.png" alt="GitHub Clone URL" class="screenshot-image">
+                <p class="screenshot-caption">GitHub குளோன் URL</p>
+            </div>
+            
+            <p>உங்கள் Git bash-ஐத் திறந்து களஞ்சியத்தை குளோன் செய்யவும்:</p>
+            
+            <div class="code-example">
+                <h3>உதாரணம்</h3>
+                <pre><code class="command-input">git clone https://github.com/jassifteam-test/jassifteam-test.github.io.git</code>
+<span class="command-output">Cloning into 'jassifteam-test.github.io'...
+remote: Enumerating objects: 33, done.
+remote: Counting objects: 100% (33/33), done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 33 (delta 18), reused 33 (delta 18), pack-reused 0
+Receiving objects: 100% (33/33), 94.79 KiB | 3.16 MiB/s, done.
+Resolving deltas: 100% (18/18), done.</span></code></pre>
+            </div>
+            
+            <p>உங்கள் கோப்பு முறைமையில் பாருங்கள், குளோன் செய்யப்பட்ட திட்டத்தின் பெயரில் ஒரு புதிய அடைவு இருப்பதை நீங்கள் காண்பீர்கள்:</p>
+            
+            <div class="code-example">
+                <h3>உதாரணம்</h3>
+                <pre><code class="command-input">ls</code>
+<span class="command-output">w3schools-test.github.io/</span></code></pre>
+            </div>
+            
+            <div class="tip-box">
+                <h4><span class="tip-icon">💡</span> குறிப்பு:</h4>
+                <p>குளோன் செய்ய ஒரு குறிப்பிட்ட கோப்புறையைக் குறிப்பிட, களஞ்சிய URL-க்குப் பிறகு கோப்புறையின் பெயரைச் சேர்க்கவும், இது போன்றது: <code>git clone https://github.com/jassifteam-test/jassifteam-test.github.io.git myfolder</code></p>
+            </div>
+            
+            <p>புதிய அடைவுக்குச் சென்று, நிலையைச் சரிபார்க்கவும்:</p>
+            
+            <div class="code-example">
+                <h3>உதாரணம்</h3>
+                <pre><code class="command-input">cd jassifteam-test.github.io
+git status</code>
+<span class="command-output">On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean</span></code></pre>
+            </div>
+            
+            <p>மேலும், எங்களிடம் முழு களஞ்சியத் தரவு உள்ளது என்பதை உறுதிப்படுத்த பதிவைச் சரிபார்க்கவும்:</p>
+            
+            <div class="code-example">
+                <h3>உதாரணம்</h3>
+                <pre><code class="command-input">git log</code>
+<span class="command-output">commit facaeae8fd87dcb63629f108f401aa9c3614d4e6 (HEAD -> master, origin/master, origin/HEAD)
+Merge: e7de78f 5a04b6f
+Author: jassifteam-test 
+Date:   Fri Mar 26 15:44:10 2021 +0100
+
+    Merge branch 'master' of https://github.com/jassifteam-test/hello-world
+
+commit e7de78fdefdda51f6f961829fcbdf197e9b926b6
+Author: jassifteam-test 
+Date:   Fri Mar 26 15:37:22 2021 +0100
+
+    Updated index.html. Resized image
+    
+.....</span></code></pre>
+            </div>
+            
+            <div class="success-box">
+                <h4><span class="success-icon">✅</span> குளோன் முடிந்தது!</h4>
+                <p>இப்போது அசல் களஞ்சியத்தின் முழு நகல் எங்களிடம் உள்ளது.</p>
+            </div>
+        </section>
+
+        <!-- Configuring Remotes -->
+        <section class="content-section" id="configuring-remotes">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <h2>ரிமோட்டுகளை கட்டமைத்தல்</h2>
+            </div>
+            
+            <p>அடிப்படையில், எங்களிடம் ஒரு களஞ்சியத்தின் முழு நகல் உள்ளது, அதன் தோற்றத்தை மாற்ற எங்களுக்கு அனுமதி இல்லை.</p>
+            
+            <p>இந்த Git-இன் ரிமோட்டுகள் எவ்வாறு அமைக்கப்பட்டுள்ளன என்று பார்ப்போம்:</p>
+            
+            <div class="code-example">
+                <h3>உதாரணம்</h3>
+                <pre><code class="command-input">git remote -v</code>
+<span class="command-output">origin  https://github.com/jassifteam-test/jassifteam-test.github.io.git (fetch)
+origin  https://github.com/jassifteam-test/jassifteam-test.github.io.git (push)</span></code></pre>
+            </div>
+            
+            <p>தோற்றம் அசல் "jassifteam-test" களஞ்சியத்திற்கு அமைக்கப்பட்டுள்ளது என்பதை நாங்கள் காண்கிறோம், எங்கள் சொந்த ஃபோர்க்கையும் சேர்க்க விரும்புகிறோம்.</p>
+            
+            <p>முதலில், அசல் தோற்ற ரிமோட்டை மறுபெயரிடுகிறோம்:</p>
+            
+            <div class="code-example">
+                <h3>உதாரணம்</h3>
+                <pre><code class="command-input">git remote rename origin upstream
+git remote -v</code>
+<span class="command-output">upstream        https://github.com/jassifteam-test/jassifteam-test.github.io.git (fetch)
+upstream        https://github.com/jassifteam-test/jassifteam-test.github.io.git (push)</span></code></pre>
+            </div>
+            
+            <p>பின்னர் எங்கள் சொந்த ஃபோர்க்கின் URL-ஐப் பெறுவோம்:</p>
+            
+            <div class="screenshot-container">
+                <img src="github24.png" alt="GitHub Fork Clone URL" class="screenshot-image">
+                <p class="screenshot-caption">GitHub ஃபோர்க் குளோன் URL</p>
+            </div>
+            
+            <p>அதை தோற்றமாகச் சேர்க்கவும்:</p>
+            
+            <div class="code-example">
+                <h3>உதாரணம்</h3>
+                <pre><code class="command-input">git remote add origin https://github.com/kaijim/jassifteam-test.github.io.git
+git remote -v</code>
+<span class="command-output">origin  https://github.com/kaijim/jassifteam-test.github.io.git (fetch)
+origin  https://github.com/kaijim/jassifteam-test.github.io.git (push)
+upstream        https://github.com/jassifteam-test/jassifteam-test.github.io.git (fetch)
+upstream        https://github.com/jassifteam-test/jassifteam-test.github.io.git (push)</span></code></pre>
+            </div>
+            
+            <div class="tip-box">
+                <h4><span class="tip-icon">📝</span> குறிப்பு:</h4>
+                <p>Git பெயரிடும் மரபுகளின்படி, உங்கள் சொந்த களஞ்சியத்தை <strong>origin</strong> என்றும், நீங்கள் ஃபோர்க் செய்ததை <strong>upstream</strong> என்றும் பெயரிட பரிந்துரைக்கப்படுகிறது.</p>
+            </div>
+            
+            <p>இப்போது எங்களிடம் 2 ரிமோட்டுகள் உள்ளன:</p>
+            
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>origin</h3>
+                    <p>எங்கள் சொந்த ஃபோர்க், எங்களுக்கு வாசிப்பு மற்றும் எழுதும் அணுகல் உள்ளது</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                    <h3>upstream</h3>
+                    <p>அசல், எங்களுக்கு வாசிப்பு-மட்டும் அணுகல் உள்ளது</p>
+                </div>
+            </div>
+            
+            <div class="success-box">
+                <h4><span class="success-icon">🚀</span> தயார்!</h4>
+                <p>இப்போது நாங்கள் குறியீட்டில் சில மாற்றங்களைச் செய்யப் போகிறோம். அடுத்த அத்தியாயத்தில், அந்த மாற்றங்களை அசல் களஞ்சியத்திற்கு எவ்வாறு பரிந்துரைக்கிறோம் என்பதைக் க覆盖்போம்.</p>
+            </div>
+        </section>
+
+        <!-- Quick Reference -->
+        <section class="content-section" id="quick-reference">
+            <h2>விரைவு குறிப்பு</h2>
+            
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>குளோன்</h3>
+                    <p>களஞ்சியத்தை உள்ளூருக்கு பதிவிறக்கவும்</p>
+                    <div class="code-block small">
+                        <pre><code>git clone URL</code></pre>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>ரிமோட்டுகள்</h3>
+                    <p>ரிமோட் களஞ்சியங்களைப் பாருங்கள்</p>
+                    <div class="code-block small">
+                        <pre><code>git remote -v</code></pre>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>ரிமோட் மறுபெயரிடு</h3>
+                    <p>ரிமோட்டை மறுபெயரிடவும்</p>
+                    <div class="code-block small">
+                        <pre><code>git remote rename old new</code></pre>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <h3>ரிமோட் சேர்க்க</h3>
+                    <p>புதிய ரிமோட்டைச் சேர்க்கவும்</p>
+                    <div class="code-block small">
+                        <pre><code>git remote add name URL</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="Git GUI Clients.html" class="nav-tab prev">
+                <i class="fas fa-arrow-left"></i>
+                <span>முந்தைய</span>
+            </a>
+            <a href="Git GitHub Send Pull Request.html" class="nav-tab next">
+                <span>அடுத்தது</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Jassif Team Institution</h3>
+                <p>Leading educational institution providing quality programming education in Tamil.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#clone-fork">குளோன் ஃபோர்க்</a></li>
+                    <li><a href="#configuring-remotes">ரிமோட்டுகள் கட்டமைத்தல்</a></li>
+                    <li><a href="#quick-reference">விரைவு குறிப்பு</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Location & Hours</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Jassif Team Institution. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Additional styles for this page */
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .concept-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-left: 4px solid var(--git-color);
+        }
+        
+        .concept-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .concept-icon {
+            font-size: 2rem;
+            color: var(--git-color);
+            margin-bottom: 1rem;
+        }
+        
+        .concept-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Step Header Styles */
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-number {
+            background: var(--git-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Screenshot Styles */
+        .screenshot-container {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .screenshot-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #dee2e6;
+        }
+        
+        .screenshot-caption {
+            margin-top: 0.5rem;
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        /* Code Block Styles */
+        .code-block {
+            background: #2d2d2d;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+        
+        .code-block.small {
+            margin: 0.5rem 0;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        
+        .code-block code {
+            color: #f8f8f2;
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Success Box */
+        .success-box {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            border-left: 6px solid #ffd700;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            color: white;
+            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+        }
+        
+        .success-icon {
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .concepts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all content sections for animation
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

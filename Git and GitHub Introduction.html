@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git and GitHub Introduction - Jassif Team Institution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h1>Jassif Team <span>Institution</span></h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Navigation Tabs -->
+    <div class="nav-tabs">
+        <a href="git-tutorial.html" class="nav-tab prev">
+            <i class="fas fa-arrow-left"></i>
+            <span>முந்தைய</span>
+        </a>
+        <a href="Git Install.html" class="nav-tab next">
+            <span>அடுத்தது</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Git and GitHub Introduction</h2>
+            <p>Learn about version control and collaborative coding</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- What is Git Section -->
+        <section class="content-section" id="what-is-git">
+            <h2>What is Git?</h2>
+            <p>Git என்பது ஒரு பிரபலமான வெர்சன் கன்ட்ரோல் சிஸ்டம் (Version Control System) ஆகும்.</p>
+            
+            <p>இது 2005 இல் லினஸ் டோர்வால்ட்ஸ் என்பவரால் உருவாக்கப்பட்டது, மேலும் அதன் பிறகு ஜூனியோ ஹமானோ என்பவரால் பராமரிக்கப்படுகிறது.</p>
+            
+            <h3>இது பயன்படுத்தப்படுவது:</h3>
+            <ul>
+                <li>குறியீடு மாற்றங்களை கண்காணிக்க</li>
+                <li>யார் மாற்றங்களை செய்தார்கள் என்பதை கண்காணிக்க</li>
+                <li>குறியீட்டு ஒத்துழைப்புக்காக</li>
+            </ul>
+        </section>
+        
+        <!-- Key Git Concepts Section -->
+        <section class="content-section" id="git-concepts">
+            <h2>Key Git Concepts</h2>
+            
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                    <h3>Repository</h3>
+                    <p>உங்கள் திட்டம் மற்றும் அதன் வரலாற்றை Git கண்காணிக்கும் ஒரு கோப்புறை</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-copy"></i>
+                    </div>
+                    <h3>Clone</h3>
+                    <p>ஒரு ரிமோட் ரிப்போசிடரியின் நகலை உங்கள் கணினியில் உருவாக்குதல்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Stage</h3>
+                    <p>அடுத்து எந்த மாற்றங்களை சேமிக்க விரும்புகிறீர்கள் என Git க்கு சொல்லுதல்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-save"></i>
+                    </div>
+                    <h3>Commit</h3>
+                    <p>உங்கள் staged மாற்றங்களின் ஒரு snapshot ஐ சேமித்தல்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>Branch</h3>
+                    <p>ஒரே நேரத்தில் வெவ்வேறு பதிப்புகள் அல்லது அம்சங்களில் வேலை செய்தல்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-code-merge"></i>
+                    </div>
+                    <h3>Merge</h3>
+                    <p>வெவ்வேறு பிராஞ்ச்களில் இருந்து மாற்றங்களை இணைத்தல்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Pull</h3>
+                    <p>ஒரு ரிமோட் ரிப்போசிடரியில் இருந்து சமீபத்திய மாற்றங்களைப் பெறுதல்</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <h3>Push</h3>
+                    <p>உங்கள் மாற்றங்களை ஒரு ரிமோட் ரிப்போசிடரிக்கு அனுப்புதல்</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Working with Git Section -->
+        <section class="content-section" id="working-git">
+            <h2>Working with Git</h2>
+            
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Initialize Git on a folder</h3>
+                        <p>ஒரு கோப்புறையில் Git ஐ இனிஷியலைஸ் செய்யவும், அதை ஒரு ரிப்போசிடரியாக மாற்றவும்</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Hidden folder creation</h3>
+                        <p>Git இப்போது அந்த கோப்புறையில் மாற்றங்களை கண்காணிக்க ஒரு மறைக்கப்பட்ட கோப்புறையை உருவாக்குகிறது</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>File modification</h3>
+                        <p>ஒரு கோப்பு மாற்றப்பட்டால், சேர்க்கப்பட்டால் அல்லது நீக்கப்பட்டால், அது மாற்றப்பட்டதாக கருதப்படுகிறது</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Stage files</h3>
+                        <p>நீங்கள் stage செய்ய விரும்பும் மாற்றப்பட்ட கோப்புகளைத் தேர்ந்தெடுக்கவும்</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Commit changes</h3>
+                        <p>Staged கோப்புகள் committed ஆகின்றன, இது Git க்கு கோப்புகளின் நிரந்தர snapshot ஐ சேமிக்க கட்டளையிடுகிறது</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <h4><span class="tip-icon">💡</span> முக்கிய குறிப்பு:</h4>
+                <p>Git ஒவ்வொரு கமிட்டிலும் ஒவ்வொரு கோப்பின் தனி நகலை சேமிக்காது, ஆனால் ஒவ்வொரு கமிட்டிலும் செய்யப்பட்ட மாற்றங்களை கண்காணிக்கிறது!</p>
+            </div>
+        </section>
+        
+        <!-- Why Git Section -->
+        <section class="content-section" id="why-git">
+            <h2>Why Git?</h2>
+            
+            <div class="stats-box">
+                <div class="stat-item">
+                    <div class="stat-number">70%+</div>
+                    <div class="stat-text">டெவலப்பர்கள் Git ஐப் பயன்படுத்துகின்றனர்!</div>
+                </div>
+            </div>
+            
+            <ul>
+                <li>டெவலப்பர்கள் உலகில் எங்கிருந்தும் ஒன்றாக வேலை செய்யலாம்</li>
+                <li>டெவலப்பர்கள் திட்டத்தின் முழு வரலாற்றையும் பார்க்கலாம்</li>
+                <li>டெவலப்பர்கள் ஒரு திட்டத்தின் முந்தைய பதிப்புகளுக்கு திரும்பிச் செல்லலாம்</li>
+            </ul>
+            
+            <div class="note-box">
+                <h4>குறிப்பு:</h4>
+                <p>பெரும்பாலான Git செயல்கள் (staging, committing, மற்றும் வரலாற்றைப் பார்ப்பது போன்றவை) உங்கள் சொந்த கணினியில் நடக்கும்.</p>
+                <p>மாற்றங்களை பதிவேற்ற அல்லது பதிவிறக்க Push மற்றும் Pull மட்டுமே GitHub, GitLab, அல்லது Bitbucket போன்ற ரிமோட் சர்வர்களுடன் தொடர்பு கொள்கின்றன.</p>
+            </div>
+        </section>
+        
+        <!-- Platform Selector Section -->
+        <section class="content-section" id="platform-selector">
+            <h2>Change Platform:</h2>
+            
+            <div class="platform-selector">
+                <p>டுடோரியல் GitHub, GitLab, அல்லது Bitbucket ஆகியவற்றுக்கான எடுத்துக்காட்டுகளைக் காட்டலாம்.</p>
+                
+                <div class="platform-buttons">
+                    <button class="platform-btn active">GitHub</button>
+                    <button class="platform-btn">Bitbucket</button>
+                    <button class="platform-btn">GitLab</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- What is GitHub Section -->
+        <section class="content-section" id="what-is-github">
+            <h2>What is GitHub?</h2>
+            
+            <div class="warning-box">
+                <h4>⚠️ முக்கியமானது:</h4>
+                <p>Git மற்றும் GitHub ஒன்றல்ல!</p>
+            </div>
+            
+            <p>GitHub, Git ஐப் பயன்படுத்தும் கருவிகளை உருவாக்குகிறது.</p>
+            
+            <p>GitHub என்பது உலகின் மிகப்பெரிய மூல குறியீட்டு ஹோஸ்ட் ஆகும், மேலும் 2018 முதல் மைக்ரோசாப்ட்டின் சொத்தாக உள்ளது.</p>
+            
+            <div class="tip-box">
+                <h4><span class="tip-icon">🎯</span> இந்த டுடோரியலில்:</h4>
+                <p>GitHub உடன் Git ஐப் பயன்படுத்துவதில் கவனம் செலுத்துவோம்.</p>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="git-tutorial.html" class="nav-tab prev">
+                <i class="fas fa-arrow-left"></i>
+                <span>முந்தைய</span>
+            </a>
+            <a href="Git Install.html" class="nav-tab next">
+                <span>அடுத்தது</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Jassif Team Institution</h3>
+                <p>Leading educational institution providing quality programming education in Tamil.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#what-is-git">What is Git?</a></li>
+                    <li><a href="#git-concepts">Git Concepts</a></li>
+                    <li><a href="#working-git">Working with Git</a></li>
+                    <li><a href="#why-git">Why Git?</a></li>
+                    <li><a href="#what-is-github">What is GitHub?</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Location & Hours</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Jassif Team Institution. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Additional styles for this page */
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .concept-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-left: 4px solid var(--git-color);
+        }
+        
+        .concept-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .concept-icon {
+            font-size: 2rem;
+            color: var(--git-color);
+            margin-bottom: 1rem;
+        }
+        
+        .concept-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .workflow-steps {
+            margin: 2rem 0;
+        }
+        
+        .workflow-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid var(--git-color);
+        }
+        
+        .step-number {
+            background: var(--git-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stats-box {
+            background: linear-gradient(135deg, var(--git-color), #e74c3c);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-text {
+            font-size: 1.2rem;
+        }
+        
+        .note-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .note-box h4 {
+            color: #1565c0;
+            margin-bottom: 0.5rem;
+        }
+        
+        .warning-box {
+            background-color: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .warning-box h4 {
+            color: #c62828;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .concepts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .workflow-step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Platform selector functionality
+        document.querySelectorAll('.platform-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.platform-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all content sections for animation
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

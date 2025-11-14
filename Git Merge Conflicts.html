@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Merge Conflicts - Jassif Team Institution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h1>Jassif Team <span>Institution</span></h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Navigation Tabs -->
+    <div class="nav-tabs">
+        <a href="Git Cherry-pick & Patch.html" class="nav-tab prev">
+            <i class="fas fa-arrow-left"></i>
+            <span>முந்தைய</span>
+        </a>
+        <a href="Git CI_CD.html" class="nav-tab next">
+            <span>அடுத்தது</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Git Merge Conflicts</h2>
+            <p>கிளைகளை இணைக்கும் போது ஏற்படும் முரண்பாடுகளை நிர்வகிக்கவும் தீர்க்கவும்</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- What is a Merge Conflict -->
+        <section class="content-section" id="what-is-merge-conflict">
+            <h2>Merge Conflict என்றால் என்ன?</h2>
+            
+            <p>ஒரு கோப்பின் ஒரே பகுதியை இரண்டு கிளைகள் மாற்றும்போது ஒரு மெர்ஜ் முரண்பாடு ஏற்படுகிறது.</p>
+            
+            <p>எந்த மாற்றத்தை வைத்துக்கொள்ள வேண்டும் என Git முடிவு செய்ய முடியாது, எனவே நீங்கள் தேர்வு செய்ய வேண்டும்.</p>
+            
+            <p>மெர்ஜ் முடிக்கும் முன் நீங்கள் முரண்பாட்டை தீர்க்க வேண்டும்.</p>
+        </section>
+
+        <!-- Why Do Merge Conflicts Happen -->
+        <section class="content-section" id="why-conflicts-happen">
+            <h2>மெர்ஜ் முரண்பாடுகள் ஏன் ஏற்படுகின்றன?</h2>
+            
+            <p>ஒரு கோப்பின் ஒரே வரிகளை மாற்றிய கிளைகளை நீங்கள் இணைக்கும்போது மெர்ஜ் முரண்பாடுகள் பொதுவாக ஏற்படும்.</p>
+            
+            <p>இது கூட்டு திட்டங்களில் அல்லது நீண்டகால கிளைகளில் பணிபுரியும் போது பொதுவானது.</p>
+        </section>
+
+        <!-- How to See and Resolve Merge Conflicts -->
+        <section class="content-section" id="see-resolve-conflicts">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <h2>மெர்ஜ் முரண்பாடுகளைக் காணவும் தீர்க்கவும் எப்படி</h2>
+            </div>
+            
+            <p>நீங்கள் ஒரு கிளையை இணைக்கும்போது முரண்பட்ட மாற்றங்கள் இருந்தால், Git இடைநிறுத்தி முரண்பாடுகளுடன் கோப்புகளைக் குறிக்கும்.</p>
+            
+            <div class="code-example">
+                <h3>உதாரணம்: ஒரு கிளையை இணைக்கவும்</h3>
+                <pre><code class="command-input">git merge feature-branch</code></pre>
+            </div>
+            
+            <p>முரண்பாடுகள் இருந்தால், எந்த கோப்புகள் பாதிக்கப்பட்டுள்ளன என்று Git உங்களுக்குச் சொல்லும்.</p>
+        </section>
+
+        <!-- See Which Files Have Conflicts -->
+        <section class="content-section" id="see-conflict-files">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <h2>எந்த கோப்புகளில் முரண்பாடுகள் உள்ளன என்பதைக் காணவும்</h2>
+            </div>
+            
+            <p>உங்கள் கவனத்தை எந்த கோப்புகள் தேவைப்படுகின்றன என்பதைக் காண <code>git status</code> பயன்படுத்தவும்:</p>
+            
+            <div class="code-example">
+                <h3>உதாரணம்: நிலையைச் சரிபார்க்கவும்</h3>
+                <pre><code class="command-input">git status</code></pre>
+            </div>
+        </section>
+
+        <!-- See the Differences -->
+        <section class="content-section" id="see-differences">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <h2>வேறுபாடுகளைக் காணவும்</h2>
+            </div>
+            
+            <p>என்ன மாற்றம் ஏற்பட்டது என்பதைக் காணவும் முரண்பாட்டை எவ்வாறு தீர்ப்பது என்பதைத் தீர்மானிக்க உதவ <code>git diff</code> பயன்படுத்தவும்:</p>
+            
+            <div class="code-example">
+                <h3>உதாரணம்: வேறுபாடுகளைக் காணவும்</h3>
+                <pre><code class="command-input">git diff</code></pre>
+            </div>
+        </section>
+
+        <!-- Edit the Conflict Markers -->
+        <section class="content-section" id="edit-conflict-markers">
+            <div class="step-header">
+                <div class="step-number">4</div>
+                <h2>முரண்பாட்டு குறிப்பான்களைத் திருத்தவும்</h2>
+            </div>
+            
+            <p>முரண்பட்ட கோப்பைத் திறக்கவும். இது போன்ற பகுதிகளை நீங்கள் காண்பீர்கள்:</p>
+            
+            <div class="code-example">
+                <h3>முரண்பாட்டு குறிப்பான்கள்</h3>
+                <pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+உங்கள் மாற்றங்கள் இங்கே
+=======
+மற்ற கிளையின் மாற்றங்கள்
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature-branch</code></pre>
+            </div>
+            
+            <p>நீங்கள் விரும்புவதை வைத்துக்கொள்ள கோப்பைத் திருத்தவும், பின்னர் முரண்பாட்டு குறிப்பான்களை (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>) அகற்றவும்.</p>
+        </section>
+
+        <!-- Mark as Resolved -->
+        <section class="content-section" id="mark-resolved">
+            <div class="step-header">
+                <div class="step-number">5</div>
+                <h2>தீர்க்கப்பட்டதாகக் குறிக்கவும்</h2>
+            </div>
+            
+            <p>கோப்பை சரிசெய்த பிறகு, அதை தீர்க்கப்பட்டதாகக் குறிக்கவும்:</p>
+            
+            <div class="code-example">
+                <h3>உதாரணம்: தீர்க்கப்பட்டதாகக் குறிக்கவும்</h3>
+                <pre><code class="command-input">git add filename.txt</code></pre>
+            </div>
+        </section>
+
+        <!-- Complete the Merge -->
+        <section class="content-section" id="complete-merge">
+            <div class="step-header">
+                <div class="step-number">6</div>
+                <h2>மெர்ஜை முடிக்கவும்</h2>
+            </div>
+            
+            <p>ஒரு கமிட்டுடன் மெர்ஜை முடிக்கவும் (Git தானாக செய்யாவிட்டால்):</p>
+            
+            <div class="code-example">
+                <h3>உதாரணம்: மெர்ஜை முடிக்கவும்</h3>
+                <pre><code class="command-input">git commit</code></pre>
+            </div>
+        </section>
+
+        <!-- Cancel the Merge -->
+        <section class="content-section" id="cancel-merge">
+            <h2>மெர்ஜை ரத்து செய்யவும்</h2>
+            
+            <p>நீங்கள் நிறுத்தி மெர்ஜை ரத்து செய்ய விரும்பினால்:</p>
+            
+            <div class="code-example">
+                <h3>உதாரணம்: மெர்ஜை கைவிடவும்</h3>
+                <pre><code class="command-input">git merge --abort</code></pre>
+            </div>
+        </section>
+
+        <!-- Use a Visual Merge Tool -->
+        <section class="content-section" id="use-visual-tool">
+            <h2>ஒரு காட்சி மெர்ஜ் கருவியைப் பயன்படுத்தவும்</h2>
+            
+            <p>நீங்கள் விரும்பினால், முரண்பாடுகளை தீர்க்க ஒரு காட்சி கருவியைப் பயன்படுத்தலாம்:</p>
+            
+            <div class="code-example">
+                <h3>உதாரணம்: Mergetool பயன்படுத்தவும்</h3>
+                <pre><code class="command-input">git mergetool</code></pre>
+            </div>
+        </section>
+
+        <!-- Pick One Side's Changes -->
+        <section class="content-section" id="pick-one-side">
+            <h2>ஒரு பக்கத்தின் மாற்றங்களைத் தேர்ந்தெடுக்கவும்</h2>
+            
+            <p>உங்கள் மாற்றங்களை மட்டும் அல்லது மற்ற கிளையின் மாற்றங்களை மட்டும் வைத்திருக்க விரும்பினால்:</p>
+            
+            <div class="code-example">
+                <h3>உதாரணம்: எங்கள் மாற்றங்களை வைத்துக்கொள்ளவும்</h3>
+                <pre><code class="command-input">git checkout --ours filename.txt</code></pre>
+            </div>
+            
+            <div class="code-example">
+                <h3>உதாரணம்: அவர்களின் மாற்றங்களை வைத்துக்கொள்ளவும்</h3>
+                <pre><code class="command-input">git checkout --theirs filename.txt</code></pre>
+            </div>
+        </section>
+
+        <!-- Troubleshooting & Best Practices -->
+        <section class="content-section" id="troubleshooting">
+            <h2>பழுது நீக்குதல் & சிறந்த நடைமுறைகள்</h2>
+            
+            <div class="troubleshooting-grid">
+                <div class="issue-card">
+                    <div class="issue-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h4>நீங்கள் சிக்கலில் சிக்கினால்</h4>
+                    <p>மீண்டும் தொடங்க <code>git merge --abort</code> பயன்படுத்தலாம்</p>
+                </div>
+                
+                <div class="issue-card">
+                    <div class="issue-icon">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <h4>தீர்க்கப்பட்டதாகக் குறிப்பதற்கு முன்</h4>
+                    <p>அனைத்து முரண்பாட்டு குறிப்பான்களையும் அகற்றுவதை உறுதிப்படுத்திக் கொள்ளுங்கள்</p>
+                </div>
+                
+                <div class="issue-card">
+                    <div class="issue-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h4>காட்சி கருவியைப் பயன்படுத்தினால்</h4>
+                    <p>நீங்கள் <code>git mergetool</code> பயன்படுத்தி முடிவு பிடிக்கவில்லை என்றால், கோப்புகளை கைமுறையாக திருத்தலாம்</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Note -->
+        <section class="content-section" id="important-note">
+            <h2>முக்கியமான குறிப்பு</h2>
+            
+            <div class="note-box">
+                <h4><span class="note-icon">📝</span> Jassif Team குறிப்பு</h4>
+                <p>மெர்ஜ் முரண்பாடுகள் கூட்டு மேம்பாட்டின் இயல்பான பகுதியாகும். அவை தவறாக இல்லை - அவை பலர் ஒரே குறியீட்டில் பணிபுரிகிறார்கள் என்பதைக் காட்டுகின்றன.</p>
+                <p>மெர்ஜ் முரண்பாடுகளைத் தீர்ப்பது ஒரு திறமையாகும், மேலும் பயிற்சியுடன் அது விரைவாகவும் திறம்படவும் மாறும்.</p>
+            </div>
+        </section>
+
+        <!-- Quick Reference -->
+        <section class="content-section" id="quick-reference">
+            <h2>விரைவு குறிப்பு</h2>
+            
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>மெர்ஜ் செய்யவும்</h3>
+                    <p>கிளையை இணைக்கவும்</p>
+                    <div class="code-block small">
+                        <pre><code>git merge branch-name</code></pre>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>முரண்பாடுகளைச் சரிபார்க்கவும்</h3>
+                    <p>முரண்பட்ட கோப்புகள்</p>
+                    <div class="code-block small">
+                        <pre><code>git status</code></pre>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3>தீர்க்கப்பட்டதாகக் குறிக்கவும்</h3>
+                    <p>கோப்பு சேர்க்கவும்</p>
+                    <div class="code-block small">
+                        <pre><code>git add filename</code></pre>
+                    </div>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <h3>மெர்ஜை ரத்து செய்யவும்</h3>
+                    <p>மெர்ஜை கைவிடவும்</p>
+                    <div class="code-block small">
+                        <pre><code>git merge --abort</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="Git Cherry-pick & Patch.html" class="nav-tab prev">
+                <i class="fas fa-arrow-left"></i>
+                <span>முந்தைய</span>
+            </a>
+            <a href="Git CI_CD.html" class="nav-tab next">
+                <span>அடுத்தது</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Jassif Team Institution</h3>
+                <p>Leading educational institution providing quality programming education in Tamil.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#what-is-merge-conflict">Merge Conflict என்றால் என்ன?</a></li>
+                    <li><a href="#see-resolve-conflicts">முரண்பாடுகளைத் தீர்க்கவும்</a></li>
+                    <li><a href="#edit-conflict-markers">குறிப்பான்களைத் திருத்தவும்</a></li>
+                    <li><a href="#troubleshooting">பழுது நீக்குதல்</a></li>
+                    <li><a href="#quick-reference">விரைவு குறிப்பு</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Location & Hours</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Jassif Team Institution. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Additional styles for this page */
+        .benefits-grid, .troubleshooting-grid, .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .benefit-card, .issue-card, .concept-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-left: 4px solid var(--git-color);
+        }
+        
+        .benefit-card:hover, .issue-card:hover, .concept-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon, .issue-icon, .concept-icon {
+            font-size: 2rem;
+            color: var(--git-color);
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card h3, .issue-card h4, .concept-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Step Header Styles */
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-number {
+            background: var(--git-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Note Box */
+        .note-box {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            border-left: 6px solid #ffd700;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            color: white;
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+        }
+        
+        .note-icon {
+            margin-right: 10px;
+        }
+        
+        /* Code Block Styles */
+        .code-block {
+            background: #2d2d2d;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+        
+        .code-block.small {
+            margin: 0.5rem 0;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        
+        .code-block code {
+            color: #f8f8f2;
+            font-family: 'Courier New', monospace;
+        }
+        
+        @media (max-width: 768px) {
+            .benefits-grid, .troubleshooting-grid, .concepts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all content sections for animation
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
